@@ -1,0 +1,5 @@
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.Model.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.Model.pdb
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.csproj.CoreCompileInputs.cache
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.pdb

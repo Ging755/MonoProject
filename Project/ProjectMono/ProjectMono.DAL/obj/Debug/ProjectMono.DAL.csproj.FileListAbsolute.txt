@@ -1,0 +1,12 @@
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.DAL\bin\Debug\ProjectMono.DAL.dll.config
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.DAL\bin\Debug\ProjectMono.DAL.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.DAL\bin\Debug\ProjectMono.DAL.pdb
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.DAL\obj\Debug\ProjectMono.DAL.csprojAssemblyReference.cache
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.DAL\obj\Debug\ProjectMono.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.DAL\obj\Debug\ProjectMono.DAL.csproj.CopyComplete
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.DAL\obj\Debug\ProjectMono.DAL.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.DAL\obj\Debug\ProjectMono.DAL.pdb
