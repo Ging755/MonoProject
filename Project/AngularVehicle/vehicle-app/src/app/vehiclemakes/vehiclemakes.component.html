@@ -1,0 +1,51 @@
+<div>
+    <label>Search:
+      <input [(ngModel)]="search" placeholder="search" (change)="filterVehicleMakes()"/>
+    </label>
+    <label> Order by:
+        <select  [(ngModel)] ="orderby" (change)="filterVehicleMakes()">
+            <option orderby="">--All--</option>
+            <option orderby="Name">
+                Name
+            </option>
+            <option orderby="Abrv">
+                Abrv
+            </option>
+        </select>
+    </label>
+    <label> Order by direction:
+            <select  [(ngModel)] ="orderbydirection" (change)="filterVehicleMakes()">
+                <option orderbydirection="Ascending">
+                    Ascending
+                </option>
+                <option orderbydirection="Descending">
+                    Descending
+                </option>
+            </select>
+        </label>
+</div>
+<div>
+  <h3>Create New Make here:</h3>
+  <label>Name:
+    <input [(ngModel)]="vehiclemake.Name" placeholder="name" />
+  </label>
+  <label>Abrv:
+    <input [(ngModel)]="vehiclemake.Abrv" placeholder="abrv" />
+  </label>
+  <button (click)="addVehicleMake()">Create New</button>
+</div>
+<div>
+    <h2>Vehicle Make List</h2>
+    <ul class="vehiclemakes">
+        <li *ngFor="let make of pagedvehiclemake.Results" [class.selected]="make === selectedVehicleMake" >
+            <span class="badge" (click)="onSelect(make)">{{make.Id}}</span> {{make.Name}}
+            <button (click)="deleteVehicleMake(make)"> Delete </button>
+        </li>
+    </ul>
+</div>
+<div>
+    <button (click)="previousPage()">Previous</button>
+    <span>Page : {{pagedvehiclemake.PageNumber}} / {{pagedvehiclemake.TotalNumberOfPages}} </span>
+    <button (click)="nextPage()">Next</button>
+</div>
+<app-vehiclemake-detail [vehiclemake]="selectedVehicleMake"></app-vehiclemake-detail>

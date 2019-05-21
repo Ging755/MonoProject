@@ -68,8 +68,7 @@ namespace ProjectMono.WebAPI.Controllers
                 makeId = 0;
             }
             var vehicleModelListPaged = AutoMapper.Mapper.Map<IPagedResult<VehicleModelVM>>(await service.GetVehicleModelsAsync(sortParameters, filterParameters, pageParameters, makeId));
-            var vehicleModelList = vehicleModelListPaged.Results;
-            return Ok(vehicleModelList);
+            return Ok(vehicleModelListPaged);
         }
 
         [HttpGet]

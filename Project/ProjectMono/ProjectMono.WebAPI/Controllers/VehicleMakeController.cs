@@ -12,9 +12,11 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace ProjectMono.WebAPI.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class VehicleMakeController : ApiController
     {
         protected IVehicleMakeService service;
@@ -40,8 +42,7 @@ namespace ProjectMono.WebAPI.Controllers
                 PageSize = 0
             };
             var vehicleMakeListPaged = AutoMapper.Mapper.Map<IPagedResult<VehicleMakeVM>>(await service.GetVehicleMakesAsync(sortParameters, filterParameters, pageParameters));
-            var vehicleMakeList = vehicleMakeListPaged.Results;
-            return Ok(vehicleMakeList);
+            return Ok(vehicleMakeListPaged);
         }
         [HttpGet]
         // GET: api/VehicleMake
@@ -62,8 +63,7 @@ namespace ProjectMono.WebAPI.Controllers
                 PageSize = 5
             };
             var vehicleMakeListPaged = AutoMapper.Mapper.Map<IPagedResult<VehicleMakeVM>>(await service.GetVehicleMakesAsync(sortParameters, filterParameters, pageParameters));
-            var vehicleMakeList = vehicleMakeListPaged.Results;
-            return Ok(vehicleMakeList);
+            return Ok(vehicleMakeListPaged);
         }
 
         [HttpGet]

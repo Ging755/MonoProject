@@ -121,3 +121,6 @@ C:\Users\Ging\source\repos\ProjectMono\ProjectMono.WebAPI\bin\Ninject.Web.Common
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.WebAPI\bin\Ninject.Web.WebApi.xml
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.WebAPI\bin\Ninject.Web.WebApi.WebHost.xml
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.WebAPI\bin\Ninject.Extensions.Factory.xml
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.WebAPI\bin\System.Web.Cors.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.WebAPI\bin\System.Web.Http.Cors.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.WebAPI\bin\System.Web.Http.Cors.xml
