@@ -8,7 +8,7 @@ namespace ProjectMono.Common.ParametersCommon
 {
     public interface IPageParameters
     {
-        int Page { get; set; }
+        int? Page { get; set; }
         int PageSize { get; set; }
     }
 }

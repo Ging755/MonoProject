@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PagedResultCommon\IPagedResult.cs" />
+    <Compile Include="PagedResult\PagedResult.cs" />
     <Compile Include="ParametersCommon\IFilterParameters.cs" />
     <Compile Include="ParametersCommon\IPageParameters.cs" />
     <Compile Include="ParametersCommon\ISortParameters.cs" />

@@ -9,7 +9,7 @@ namespace ProjectMono.Common.Parameters
 {
     public class PageParameters : IPageParameters
     {
-        public int Page { get; set; }
+        public int? Page { get; set; }
         public int PageSize { get; set; }
     }
 }
