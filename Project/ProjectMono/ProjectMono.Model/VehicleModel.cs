@@ -1,4 +1,5 @@
-﻿using ProjectMono.Model.Common;
+﻿using ProjectMono.DAL.Entities;
+using ProjectMono.Model.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,6 @@ namespace ProjectMono.Model
         public int Id { get; set; }
         public string Name { get; set; }
         public string Abrv { get; set; }
-        public int VehicleMakeId { get; set; }
+        public int MakeId { get; set; }
     }
 }

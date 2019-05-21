@@ -18,10 +18,9 @@ namespace ProjectMono.Service
         {
             this.repository = repository;
         }
-        public async Task<int> AddVehicleModelAsync(IVehicleModel entity)
+        public async Task AddVehicleModelAsync(IVehicleModel entity)
         {
-            int id = await repository.AddVehicleModelAsync(entity);
-            return id;
+            await repository.AddVehicleModelAsync(entity);
         }
 
         public async Task DeleteVehicleModelAsync(IVehicleModel entity)
@@ -34,9 +33,9 @@ namespace ProjectMono.Service
             return await repository.GetVehicleModelAsync(id);
         }
 
-        public async Task<IPagedResult<IVehicleModel>> GetVehicleModelsAsync(ISortParameters sortParameters, IFilterParameters filterParameters, IPageParameters pageParameters)
+        public async Task<IPagedResult<IVehicleModel>> GetVehicleModelsAsync(ISortParameters sortParameters, IFilterParameters filterParameters, IPageParameters pageParameters, int? makeId)
         {
-            return await repository.GetVehicleModelsAsync(sortParameters, filterParameters, pageParameters);
+            return await repository.GetVehicleModelsAsync(sortParameters, filterParameters, pageParameters, makeId);
         }
 
         public async Task UpdateVehicleModelAsync(IVehicleModel entity)

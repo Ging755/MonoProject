@@ -50,6 +50,10 @@
     <Compile Include="VehicleModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ProjectMono.DAL\ProjectMono.DAL.csproj">
+      <Project>{295277ED-DBEA-4934-83EF-C2EB7E4F2308}</Project>
+      <Name>ProjectMono.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProjectMono.Model.Common\ProjectMono.Model.Common.csproj">
       <Project>{D5853501-68DE-47B0-809B-243827073C7D}</Project>
       <Name>ProjectMono.Model.Common</Name>

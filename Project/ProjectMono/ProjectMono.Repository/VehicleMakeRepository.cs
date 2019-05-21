@@ -83,9 +83,8 @@ namespace ProjectMono.Repository
             {
                 skipAmount = (pageParameters.PageSize * (pageParameters.Page - 1));
             }
-            vehicleMakeList = vehicleMakeList.Skip((int)skipAmount).Take(pageParameters.PageSize);
-            vehicleMakeList = vehicleMakeList.ToList();
             var totalNumberOfRecords = vehicleMakeList.Count();
+            vehicleMakeList = vehicleMakeList.Skip((int)skipAmount).Take(pageParameters.PageSize).ToList();
             var mod = totalNumberOfRecords % pageParameters.PageSize;
             var totalPageCount = (totalNumberOfRecords / pageParameters.PageSize) + (mod == 0 ? 0 : 1);
             PagedResult<IVehicleMake> IPagedVehicleMake = new PagedResult<IVehicleMake>()

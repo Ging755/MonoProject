@@ -43,8 +43,8 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Ninject, Version=3.3.3.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ninject.3.3.3\lib\net45\Ninject.dll</HintPath>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="Ninject.Extensions.Factory, Version=3.3.2.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.Extensions.Factory.3.3.2\lib\net45\Ninject.Extensions.Factory.dll</HintPath>
@@ -86,6 +86,10 @@
     <ProjectReference Include="..\ProjectMono.Model.Common\ProjectMono.Model.Common.csproj">
       <Project>{D5853501-68DE-47B0-809B-243827073C7D}</Project>
       <Name>ProjectMono.Model.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectMono.Model\ProjectMono.Model.csproj">
+      <Project>{A573464D-4E0A-4DCD-9A77-7D3349A5E409}</Project>
+      <Name>ProjectMono.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\ProjectMono.Repository.Common\ProjectMono.Repository.Common.csproj">
       <Project>{A307AEDA-1112-4891-B469-C43E9F131516}</Project>

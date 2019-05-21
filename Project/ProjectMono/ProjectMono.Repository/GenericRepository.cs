@@ -12,9 +12,9 @@ namespace ProjectMono.Repository
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        protected readonly VehicleContext context;
+        protected readonly NewContext context;
         protected IUnitOfWorkFactory uowFactory;
-        public GenericRepository(VehicleContext context, IUnitOfWorkFactory uowFactory)
+        public GenericRepository(NewContext context, IUnitOfWorkFactory uowFactory)
         {
             this.context = context;
             this.uowFactory = uowFactory;

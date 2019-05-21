@@ -13,8 +13,8 @@ namespace ProjectMono.Repository.UOFW
 {
     public class UnitOfWork : IUnitOfWOrk
     {
-        protected VehicleContext DbContext { get; private set; }
-        public UnitOfWork(VehicleContext dbContext)
+        protected NewContext DbContext { get; private set; }
+        public UnitOfWork(NewContext dbContext)
         {
             if (dbContext == null)
             {

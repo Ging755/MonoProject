@@ -4,3 +4,9 @@ C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model.Common\obj\Debug\Projec
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model.Common\obj\Debug\ProjectMono.Model.Common.csproj.CoreCompileInputs.cache
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model.Common\obj\Debug\ProjectMono.Model.Common.dll
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model.Common\obj\Debug\ProjectMono.Model.Common.pdb
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model.Common\bin\Debug\ProjectMono.DAL.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model.Common\bin\Debug\EntityFramework.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model.Common\bin\Debug\ProjectMono.DAL.pdb
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model.Common\bin\Debug\ProjectMono.DAL.dll.config
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model.Common\bin\Debug\EntityFramework.xml
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model.Common\obj\Debug\ProjectMono.Model.Common.csproj.CopyComplete

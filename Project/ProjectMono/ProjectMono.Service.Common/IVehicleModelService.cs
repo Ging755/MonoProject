@@ -13,10 +13,10 @@ namespace ProjectMono.Service.Common
     public interface IVehicleModelService
     {
         //Create
-        Task<int> AddVehicleModelAsync(IVehicleModel entity);
+        Task AddVehicleModelAsync(IVehicleModel entity);
         //Read
         Task<IVehicleModel> GetVehicleModelAsync(int id);
-        Task<IPagedResult<IVehicleModel>> GetVehicleModelsAsync(ISortParameters sortParameters, IFilterParameters filterParameters, IPageParameters pageParameters);
+        Task<IPagedResult<IVehicleModel>> GetVehicleModelsAsync(ISortParameters sortParameters, IFilterParameters filterParameters, IPageParameters pageParameters, int? makeId);
         //Update
         Task UpdateVehicleModelAsync(IVehicleModel entity);
         //Delete

@@ -9,3 +9,8 @@ C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.M
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.csproj.CopyComplete
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\bin\Debug\Ninject.dll
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\bin\Debug\Ninject.xml
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.DAL.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\bin\Debug\EntityFramework.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.DAL.pdb
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.DAL.dll.config
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\bin\Debug\EntityFramework.xml

@@ -1,5 +1,6 @@
 ﻿using ProjectMono.Common.PagedResultCommon;
 using ProjectMono.Common.Parameters;
+using ProjectMono.Model;
 using ProjectMono.Model.Common;
 using ProjectMono.Service.Common;
 using ProjectMono.WebAPI.Models;
@@ -47,14 +48,14 @@ namespace ProjectMono.WebAPI.Controllers
         // GET: api/VehicleMake/5
         public async Task<IHttpActionResult> Get(int? id)
         {
-            if(id == null)
+            if (id == null)
             {
                 return BadRequest();
             }
             else
             {
                 var VehicleMake = AutoMapper.Mapper.Map<VehicleMakeVM>(await service.GetVehicleMakeAsync((int)id));
-                if(VehicleMake == null)
+                if (VehicleMake == null)
                 {
                     return NotFound();
                 }
@@ -62,13 +63,13 @@ namespace ProjectMono.WebAPI.Controllers
             }
         }
 
-        // POST: api/VehicleMake
         [HttpPost]
+        // POST: api/VehicleMake
         public async Task<IHttpActionResult> Post([FromBody]VehicleMakeVM VM)
         {
             try
             {
-                await service.AddVehicleMakeAsync(AutoMapper.Mapper.Map<IVehicleMake>(VM));
+                await service.AddVehicleMakeAsync(AutoMapper.Mapper.Map<VehicleMake>(VM));
                 return Ok();
             }
             catch (DataException)
@@ -84,16 +85,16 @@ namespace ProjectMono.WebAPI.Controllers
         {
             try
             {
-                if(id == null)
+                if (id == null)
                 {
                     return BadRequest();
                 }
-                    if(service.GetVehicleMakeAsync((int) id) == null)
-                    {
-                        return BadRequest();
-                    }
-                    await service.UpdateVehicleMakeAsync(AutoMapper.Mapper.Map<IVehicleMake>(VM));
-                    return Ok();
+                if (service.GetVehicleMakeAsync((int)id) == null)
+                {
+                    return BadRequest();
+                }
+                await service.UpdateVehicleMakeAsync(AutoMapper.Mapper.Map<IVehicleMake>(VM));
+                return Ok();
             }
             catch
             {
@@ -108,18 +109,17 @@ namespace ProjectMono.WebAPI.Controllers
         {
             try
             {
-                if(id == null)
+                if (id == null)
                 {
                     return BadRequest();
                 }
                 else
                 {
-                    if (service.GetVehicleMakeAsync((int)id) == null)
+                    if (await service.GetVehicleMakeAsync((int)id) == null)
                     {
                         return BadRequest();
                     }
-                    var make = await service.GetVehicleMakeAsync((int)id);
-                    await service.DeleteVehicleMakeAsync(make);
+                    await service.DeleteVehicleMakeAsync(await service.GetVehicleMakeAsync((int)id));
                     return Ok();
                 }
             }

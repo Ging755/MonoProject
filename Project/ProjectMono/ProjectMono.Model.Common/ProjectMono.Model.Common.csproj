@@ -45,5 +45,11 @@
     <Compile Include="IVehicleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectMono.DAL\ProjectMono.DAL.csproj">
+      <Project>{295277ED-DBEA-4934-83EF-C2EB7E4F2308}</Project>
+      <Name>ProjectMono.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

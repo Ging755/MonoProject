@@ -2,6 +2,7 @@
 using ProjectMono.Common.PagedResultCommon;
 using ProjectMono.Common.ParametersCommon;
 using ProjectMono.DAL.Entities;
+using ProjectMono.Model;
 using ProjectMono.Model.Common;
 using ProjectMono.Repository.Common;
 using System;
@@ -16,36 +17,51 @@ namespace ProjectMono.Repository
     public class VehicleModelRepository : IVehicleModelRepository
     {
         protected IGenericRepository<VehicleModelEntity> Repository;
-        public VehicleModelRepository(IGenericRepository<VehicleModelEntity> repository)
+        protected IGenericRepository<VehicleMakeEntity> RepositoryMake;
+        public VehicleModelRepository(IGenericRepository<VehicleModelEntity> repository, IGenericRepository<VehicleMakeEntity> RepositoryMake)
         {
             Repository = repository;
+            this.RepositoryMake = RepositoryMake;
         }
-        public async Task<int> AddVehicleModelAsync(IVehicleModel entity)
+        public async Task AddVehicleModelAsync(IVehicleModel entity)
         {
-            await Repository.AddAsync(AutoMapper.Mapper.Map<VehicleModelEntity>(entity));
-            var temp = Repository.GetVehiclesAsync().OrderByDescending(x => x.Id).First();
-            return temp.Id;
+            var temp = AutoMapper.Mapper.Map<VehicleModelEntity>(entity);
+            temp.VehicleMakeEntityId = entity.MakeId;
+           await Repository.AddAsync(temp);
         }
 
         public async Task DeleteVehicleModelAsync(IVehicleModel entity)
         {
-            await Repository.DeleteAsync(AutoMapper.Mapper.Map<VehicleModelEntity>(entity));
+            var temp = AutoMapper.Mapper.Map<VehicleModelEntity>(entity);
+            temp.VehicleMakeEntityId = entity.MakeId;
+            await Repository.DeleteAsync(temp);
         }
 
         public async Task<IVehicleModel> GetVehicleModelAsync(int id)
         {
-            return AutoMapper.Mapper.Map<IVehicleModel>(await Repository.GetVehicleAsync((int)id));
+            var temp = await Repository.GetVehicleAsync(id);
+            var tempModel = AutoMapper.Mapper.Map<IVehicleModel>(temp);
+            tempModel.MakeId = temp.VehicleMakeEntityId;
+            return tempModel;
         }
 
-        public async Task<IPagedResult<IVehicleModel>> GetVehicleModelsAsync(ISortParameters sortParameters, IFilterParameters filterParameters, IPageParameters pageParameters)
+        public async Task<IPagedResult<IVehicleModel>> GetVehicleModelsAsync(ISortParameters sortParameters, IFilterParameters filterParameters, IPageParameters pageParameters, int? makeId)
         {
             IEnumerable<VehicleModelEntity> vehicleModelList;
             switch (sortParameters.Sort)
             {
                 case "Name":
-                    if (!string.IsNullOrEmpty(filterParameters.Search))
+                    if (!string.IsNullOrEmpty(filterParameters.Search) && makeId != 0)
+                    {
+                        vehicleModelList = await Repository.GetVehiclesAsync().Where(x => x.Name.ToUpper().Contains(filterParameters.Search) && x.VehicleMakeEntityId == makeId).OrderBy(x => x.Name).ToListAsync();
+                    }
+                    else if (!string.IsNullOrEmpty(filterParameters.Search))
                     {
                         vehicleModelList = await Repository.GetVehiclesAsync().Where(x => x.Name.ToUpper().Contains(filterParameters.Search.ToUpper())).OrderBy(x => x.Name).ToListAsync();
+                    }
+                    else if (makeId != 0)
+                    {
+                        vehicleModelList = await Repository.GetVehiclesAsync().Where(x => x.VehicleMakeEntityId == makeId).OrderBy(x => x.Name).ToListAsync();
                     }
                     else
                     {
@@ -53,9 +69,17 @@ namespace ProjectMono.Repository
                     }
                     break;
                 case "Abrv":
-                    if (!string.IsNullOrEmpty(filterParameters.Search))
+                    if (!string.IsNullOrEmpty(filterParameters.Search) && makeId != 0)
+                    {
+                        vehicleModelList = await Repository.GetVehiclesAsync().Where(x => x.Abrv.ToUpper().Contains(filterParameters.Search) && x.VehicleMakeEntityId == makeId).OrderBy(x => x.Abrv).ToListAsync();
+                    }
+                    else if (!string.IsNullOrEmpty(filterParameters.Search))
                     {
                         vehicleModelList = await Repository.GetVehiclesAsync().Where(x => x.Abrv.ToUpper().Contains(filterParameters.Search.ToUpper())).OrderBy(x => x.Abrv).ToListAsync();
+                    }
+                    else if (makeId != 0)
+                    {
+                        vehicleModelList = await Repository.GetVehiclesAsync().Where(x => x.VehicleMakeEntityId == makeId).OrderBy(x => x.Abrv).ToListAsync();
                     }
                     else
                     {
@@ -63,9 +87,17 @@ namespace ProjectMono.Repository
                     }
                     break;
                 default:
-                    if (!string.IsNullOrEmpty(filterParameters.Search))
+                    if (!string.IsNullOrEmpty(filterParameters.Search) && makeId != 0)
                     {
-                        vehicleModelList = await Repository.GetVehiclesAsync().Where(x => x.Name.ToUpper().Contains(filterParameters.Search.ToUpper())).OrderBy(x => x.Name).ToListAsync();
+                        vehicleModelList = await Repository.GetVehiclesAsync().Where(x => x.Name.ToUpper().Contains(filterParameters.Search) && x.VehicleMakeEntityId == makeId).OrderBy(x => x.Id).ToListAsync();
+                    }
+                    else if (!string.IsNullOrEmpty(filterParameters.Search))
+                    {
+                        vehicleModelList = await Repository.GetVehiclesAsync().Where(x => x.Name.ToUpper().Contains(filterParameters.Search.ToUpper())).OrderBy(x => x.Id).ToListAsync();
+                    }
+                    else if (makeId != 0)
+                    {
+                        vehicleModelList = await Repository.GetVehiclesAsync().Where(x => x.VehicleMakeEntityId == makeId).OrderBy(x => x.Id).ToListAsync();
                     }
                     else
                     {
@@ -73,9 +105,12 @@ namespace ProjectMono.Repository
                     }
                     break;
             }
-            if (sortParameters.SortDirection.ToUpper() == "DESCENDING")
+            if(sortParameters.SortDirection != null)
             {
-                vehicleModelList = vehicleModelList.Reverse();
+                if (sortParameters.SortDirection.ToUpper() == "DESCENDING")
+                {
+                    vehicleModelList = vehicleModelList.Reverse();
+                }
             }
             int? skipAmount;
             if (pageParameters.Page == 0 || pageParameters.Page == null)
@@ -86,9 +121,8 @@ namespace ProjectMono.Repository
             {
                 skipAmount = (pageParameters.PageSize * (pageParameters.Page - 1));
             }
-            vehicleModelList = vehicleModelList.Skip((int)skipAmount).Take(pageParameters.PageSize);
-            vehicleModelList = vehicleModelList.ToList();
             var totalNumberOfRecords = vehicleModelList.Count();
+            vehicleModelList = vehicleModelList.Skip((int)skipAmount).Take(pageParameters.PageSize).ToList();
             var mod = totalNumberOfRecords % pageParameters.PageSize;
             var totalPageCount = (totalNumberOfRecords / pageParameters.PageSize) + (mod == 0 ? 0 : 1);
             PagedResult<IVehicleModel> IPagedVehicleModel = new PagedResult<IVehicleModel>()
@@ -103,7 +137,9 @@ namespace ProjectMono.Repository
 
         public async Task UpdateVehicleModelAsync(IVehicleModel entity)
         {
-            await Repository.EditAsync(AutoMapper.Mapper.Map<VehicleModelEntity>(entity));
+            var temp = AutoMapper.Mapper.Map<VehicleModelEntity>(entity);
+            temp.VehicleMakeEntityId = entity.MakeId;
+            await Repository.EditAsync(temp);
         }
     }
 }
