@@ -1,4 +1,6 @@
 ﻿using ProjectMono.Common.PagedResult;
+using ProjectMono.Common.PagedResultCommon;
+using ProjectMono.Common.ParametersCommon;
 using ProjectMono.Model.Common;
 using System;
 using System.Collections.Generic;
@@ -13,8 +15,8 @@ namespace ProjectMono.Service.Common
         //Create
         Task AddVehicleModelAsync(IVehicleModel entity);
         //Read
-        Task<IVehicleModel> GetVehicleModel(int id);
-        Task<PagedResult<IVehicleModel>> GetVehicleModels();
+        Task<IVehicleModel> GetVehicleModelAsync(int id);
+        Task<IPagedResult<IVehicleModel>> GetVehicleModelsAsync(ISortParameters sortParameters, IFilterParameters filterParameters, IPageParameters pageParameters);
         //Update
         Task UpdateVehicleModelAsync(IVehicleModel entity);
         //Delete

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace ProjectMono.Repository
 {
-    public class VehicleModelRepository : IVehicleModelRepositroy
+    public class VehicleModelRepository : IVehicleModelRepository
     {
         protected IGenericRepository<VehicleModelEntity> Repository;
         public VehicleModelRepository(IGenericRepository<VehicleModelEntity> repository)

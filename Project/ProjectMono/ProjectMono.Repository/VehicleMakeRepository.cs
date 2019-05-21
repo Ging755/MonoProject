@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace ProjectMono.Repository
 {
-    public class VehicleMakeRepository : IVehicleMakeRepositroy
+    public class VehicleMakeRepository : IVehicleMakeRepository
     {
         protected IGenericRepository<VehicleMakeEntity> Repository;
         public VehicleMakeRepository(IGenericRepository<VehicleMakeEntity> repository)
@@ -31,7 +31,7 @@ namespace ProjectMono.Repository
             await Repository.DeleteAsync(AutoMapper.Mapper.Map<VehicleMakeEntity>(entity));
         }
 
-        public async Task<IPagedResult<IVehicleMake>> GetPagedVehicleMakeAsync(ISortParameters sortParameters, IFilterParameters filterParameters, IPageParameters pageParameters)
+        public async Task<IPagedResult<IVehicleMake>> GetVehicleMakesAsync(ISortParameters sortParameters, IFilterParameters filterParameters, IPageParameters pageParameters)
         {
             IEnumerable<VehicleMakeEntity> vehicleMakeList;
             switch (sortParameters.Sort)

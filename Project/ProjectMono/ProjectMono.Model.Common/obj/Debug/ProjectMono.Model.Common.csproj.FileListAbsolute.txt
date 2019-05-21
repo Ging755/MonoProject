@@ -1,0 +1,6 @@
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model.Common\bin\Debug\ProjectMono.Model.Common.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model.Common\bin\Debug\ProjectMono.Model.Common.pdb
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model.Common\obj\Debug\ProjectMono.Model.Common.csprojAssemblyReference.cache
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model.Common\obj\Debug\ProjectMono.Model.Common.csproj.CoreCompileInputs.cache
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model.Common\obj\Debug\ProjectMono.Model.Common.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model.Common\obj\Debug\ProjectMono.Model.Common.pdb

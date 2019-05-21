@@ -3,3 +3,14 @@ C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\P
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\obj\Debug\ProjectMono.Repository.Common.csproj.CoreCompileInputs.cache
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\obj\Debug\ProjectMono.Repository.Common.dll
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\obj\Debug\ProjectMono.Repository.Common.pdb
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Repository.Common.dll.config
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\EntityFramework.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Common.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Model.Common.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Common.pdb
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Model.Common.pdb
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\EntityFramework.xml
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\obj\Debug\ProjectMono.Repository.Common.csprojAssemblyReference.cache
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\obj\Debug\ProjectMono.Repository.Common.csproj.CopyComplete

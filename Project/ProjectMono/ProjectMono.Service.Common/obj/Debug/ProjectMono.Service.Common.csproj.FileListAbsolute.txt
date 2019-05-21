@@ -3,3 +3,9 @@ C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service.Common\bin\Debug\Proj
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service.Common\obj\Debug\ProjectMono.Service.Common.csproj.CoreCompileInputs.cache
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service.Common\obj\Debug\ProjectMono.Service.Common.dll
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service.Common\obj\Debug\ProjectMono.Service.Common.pdb
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service.Common\bin\Debug\ProjectMono.Common.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service.Common\bin\Debug\ProjectMono.Model.Common.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service.Common\bin\Debug\ProjectMono.Common.pdb
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service.Common\bin\Debug\ProjectMono.Model.Common.pdb
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service.Common\obj\Debug\ProjectMono.Service.Common.csprojAssemblyReference.cache
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service.Common\obj\Debug\ProjectMono.Service.Common.csproj.CopyComplete

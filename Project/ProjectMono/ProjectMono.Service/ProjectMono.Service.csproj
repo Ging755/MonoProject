@@ -42,6 +42,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VehicleMakeService.cs" />
+    <Compile Include="VehicleModelService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectMono.Common\ProjectMono.Common.csproj">
+      <Project>{BE3E245F-D584-49FB-A1DC-41667075BF75}</Project>
+      <Name>ProjectMono.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectMono.Model.Common\ProjectMono.Model.Common.csproj">
+      <Project>{D5853501-68DE-47B0-809B-243827073C7D}</Project>
+      <Name>ProjectMono.Model.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectMono.Repository.Common\ProjectMono.Repository.Common.csproj">
+      <Project>{A307AEDA-1112-4891-B469-C43E9F131516}</Project>
+      <Name>ProjectMono.Repository.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectMono.Repository\ProjectMono.Repository.csproj">
+      <Project>{8259B850-DCC5-41DB-80C8-96DFC59B9DD5}</Project>
+      <Name>ProjectMono.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectMono.Service.Common\ProjectMono.Service.Common.csproj">
+      <Project>{499FD769-DC26-4D99-BD03-ED6E35ED2C9F}</Project>
+      <Name>ProjectMono.Service.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

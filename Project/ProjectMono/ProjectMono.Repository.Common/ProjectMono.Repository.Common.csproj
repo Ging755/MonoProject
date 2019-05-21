@@ -50,8 +50,8 @@
   <ItemGroup>
     <Compile Include="IGenericRepository.cs" />
     <Compile Include="IUnitOfWOrk.cs" />
-    <Compile Include="IVehicleMakeRepositroy.cs" />
-    <Compile Include="IVehicleModelRepositroy.cs" />
+    <Compile Include="IVehicleMakeRepository.cs" />
+    <Compile Include="IVehicleModelRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
