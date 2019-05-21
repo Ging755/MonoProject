@@ -25,6 +25,27 @@ namespace ProjectMono.WebAPI.Controllers
             this.service = service;
         }
         [HttpGet]
+        public async Task<IHttpActionResult> Get()
+        {
+            var sortParameters = new SortParameters()
+            {
+                Sort = "",
+                SortDirection = ""
+            };
+            var filterParameters = new FilterParameters()
+            {
+                Search = ""
+            };
+            var pageParameters = new PageParameters()
+            {
+                Page = null,
+                PageSize = 0
+            };
+            var vehicleModelListPaged = AutoMapper.Mapper.Map<IPagedResult<VehicleModelVM>>(await service.GetVehicleModelsAsync(sortParameters, filterParameters, pageParameters, 0));
+            var vehicleModelList = vehicleModelListPaged.Results;
+            return Ok(vehicleModelList);
+        }
+        [HttpGet]
         // GET: api/VehicleModel
         public async Task<IHttpActionResult> Get(int? page, string search, string sort, string direction, int? makeId)
         {
@@ -46,7 +67,8 @@ namespace ProjectMono.WebAPI.Controllers
             {
                 makeId = 0;
             }
-            var vehicleModelList = AutoMapper.Mapper.Map<IPagedResult<VehicleModelVM>>(await service.GetVehicleModelsAsync(sortParameters, filterParameters, pageParameters, makeId));
+            var vehicleModelListPaged = AutoMapper.Mapper.Map<IPagedResult<VehicleModelVM>>(await service.GetVehicleModelsAsync(sortParameters, filterParameters, pageParameters, makeId));
+            var vehicleModelList = vehicleModelListPaged.Results;
             return Ok(vehicleModelList);
         }
 

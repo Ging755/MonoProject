@@ -34,6 +34,7 @@ namespace ProjectMono.Repository
         public async Task<IPagedResult<IVehicleMake>> GetVehicleMakesAsync(ISortParameters sortParameters, IFilterParameters filterParameters, IPageParameters pageParameters)
         {
             IEnumerable<VehicleMakeEntity> vehicleMakeList;
+            PagedResult<IVehicleMake> IPagedVehicleMake = new PagedResult<IVehicleMake>();
             switch (sortParameters.Sort)
             {
                 case "Name":
@@ -74,26 +75,34 @@ namespace ProjectMono.Repository
                     vehicleMakeList = vehicleMakeList.Reverse();
                 }
             }
-            int? skipAmount;
-            if (pageParameters.Page == 0 || pageParameters.Page == null)
+            if(pageParameters.PageSize != 0)
             {
-                skipAmount = 0;
+                int? skipAmount;
+                if (pageParameters.Page == 0 || pageParameters.Page == null)
+                {
+                    skipAmount = 0;
+                }
+                else
+                {
+                    skipAmount = (pageParameters.PageSize * (pageParameters.Page - 1));
+                }
+                var totalNumberOfRecords = vehicleMakeList.Count();
+                vehicleMakeList = vehicleMakeList.Skip((int)skipAmount).Take(pageParameters.PageSize).ToList();
+                var mod = totalNumberOfRecords % pageParameters.PageSize;
+                var totalPageCount = (totalNumberOfRecords / pageParameters.PageSize) + (mod == 0 ? 0 : 1);
+                IPagedVehicleMake.PageNumber = (int)pageParameters.Page;
+                IPagedVehicleMake.PageSize = pageParameters.PageSize;
+                IPagedVehicleMake.TotalNumberOfPages = totalPageCount;
+                IPagedVehicleMake.Results = AutoMapper.Mapper.Map<IEnumerable<IVehicleMake>>(vehicleMakeList);
             }
             else
             {
-                skipAmount = (pageParameters.PageSize * (pageParameters.Page - 1));
+                IPagedVehicleMake.PageNumber = 0;
+                IPagedVehicleMake.PageSize = 0;
+                IPagedVehicleMake.TotalNumberOfPages = 0;
+                IPagedVehicleMake.Results = AutoMapper.Mapper.Map<IEnumerable<IVehicleMake>>(vehicleMakeList);
             }
-            var totalNumberOfRecords = vehicleMakeList.Count();
-            vehicleMakeList = vehicleMakeList.Skip((int)skipAmount).Take(pageParameters.PageSize).ToList();
-            var mod = totalNumberOfRecords % pageParameters.PageSize;
-            var totalPageCount = (totalNumberOfRecords / pageParameters.PageSize) + (mod == 0 ? 0 : 1);
-            PagedResult<IVehicleMake> IPagedVehicleMake = new PagedResult<IVehicleMake>()
-            {
-                PageNumber = (int)pageParameters.Page,
-                PageSize = pageParameters.PageSize,
-                TotalNumberOfPages = totalPageCount,
-                Results = AutoMapper.Mapper.Map<IEnumerable<IVehicleMake>>(vehicleMakeList)
-            };
+
             return IPagedVehicleMake;
         }
 

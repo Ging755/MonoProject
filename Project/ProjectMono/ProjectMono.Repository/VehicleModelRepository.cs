@@ -48,6 +48,7 @@ namespace ProjectMono.Repository
         public async Task<IPagedResult<IVehicleModel>> GetVehicleModelsAsync(ISortParameters sortParameters, IFilterParameters filterParameters, IPageParameters pageParameters, int? makeId)
         {
             IEnumerable<VehicleModelEntity> vehicleModelList;
+            PagedResult<IVehicleModel> IPagedVehicleModel = new PagedResult<IVehicleModel>();
             switch (sortParameters.Sort)
             {
                 case "Name":
@@ -112,26 +113,33 @@ namespace ProjectMono.Repository
                     vehicleModelList = vehicleModelList.Reverse();
                 }
             }
-            int? skipAmount;
-            if (pageParameters.Page == 0 || pageParameters.Page == null)
+            if(pageParameters.PageSize != 0)
             {
-                skipAmount = 0;
+                int? skipAmount;
+                if (pageParameters.Page == 0 || pageParameters.Page == null)
+                {
+                    skipAmount = 0;
+                }
+                else
+                {
+                    skipAmount = (pageParameters.PageSize * (pageParameters.Page - 1));
+                }
+                var totalNumberOfRecords = vehicleModelList.Count();
+                vehicleModelList = vehicleModelList.Skip((int)skipAmount).Take(pageParameters.PageSize).ToList();
+                var mod = totalNumberOfRecords % pageParameters.PageSize;
+                var totalPageCount = (totalNumberOfRecords / pageParameters.PageSize) + (mod == 0 ? 0 : 1);
+                IPagedVehicleModel.PageNumber = (int)pageParameters.Page;
+                IPagedVehicleModel.PageSize = pageParameters.PageSize;
+                IPagedVehicleModel.TotalNumberOfPages = totalPageCount;
+                IPagedVehicleModel.Results = AutoMapper.Mapper.Map<IEnumerable<IVehicleModel>>(vehicleModelList);
             }
             else
             {
-                skipAmount = (pageParameters.PageSize * (pageParameters.Page - 1));
+                IPagedVehicleModel.PageNumber = 0;
+                IPagedVehicleModel.PageSize = 0;
+                IPagedVehicleModel.TotalNumberOfPages = 0;
+                IPagedVehicleModel.Results = AutoMapper.Mapper.Map<IEnumerable<IVehicleModel>>(vehicleModelList);
             }
-            var totalNumberOfRecords = vehicleModelList.Count();
-            vehicleModelList = vehicleModelList.Skip((int)skipAmount).Take(pageParameters.PageSize).ToList();
-            var mod = totalNumberOfRecords % pageParameters.PageSize;
-            var totalPageCount = (totalNumberOfRecords / pageParameters.PageSize) + (mod == 0 ? 0 : 1);
-            PagedResult<IVehicleModel> IPagedVehicleModel = new PagedResult<IVehicleModel>()
-            {
-                PageNumber = (int)pageParameters.Page,
-                PageSize = pageParameters.PageSize,
-                TotalNumberOfPages = totalPageCount,
-                Results = AutoMapper.Mapper.Map<IEnumerable<IVehicleModel>>(vehicleModelList)
-            };
             return IPagedVehicleModel;
         }
 
