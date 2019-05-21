@@ -41,6 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ParametersCommon\IFilterParameters.cs" />
+    <Compile Include="ParametersCommon\IPageParameters.cs" />
+    <Compile Include="ParametersCommon\ISortParameters.cs" />
+    <Compile Include="Parameters\FilterParameters.cs" />
+    <Compile Include="Parameters\PageParameters.cs" />
+    <Compile Include="Parameters\SortParameters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
