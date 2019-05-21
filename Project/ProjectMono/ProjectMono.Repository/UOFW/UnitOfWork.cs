@@ -14,7 +14,14 @@ namespace ProjectMono.Repository.UOFW
     public class UnitOfWork : IUnitOfWOrk
     {
         protected VehicleContext DbContext { get; private set; }
-
+        public UnitOfWork(VehicleContext dbContext)
+        {
+            if (dbContext == null)
+            {
+                throw new ArgumentNullException("DbContext");
+            }
+            DbContext = dbContext;
+        }
         public Task<int> AddAsync<T>(T entity) where T : class
         {
             DbEntityEntry dbEntityEntry = DbContext.Entry(entity);

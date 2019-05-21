@@ -16,6 +16,8 @@ namespace ProjectMono.WebAPI.App_Start
         {
             CreateMap<IVehicleMake, VehicleMakeVM>().ReverseMap();
             CreateMap<IVehicleModel, VehicleModelVM>().ReverseMap();
+            CreateMap<VehicleMake, VehicleMakeVM>().ReverseMap();
+            CreateMap<VehicleModel, VehicleModelVM>().ReverseMap();
             CreateMap<IPagedResult<VehicleMakeVM>,IPagedResult<IVehicleMake>>().ReverseMap();
             CreateMap<IPagedResult<VehicleModelVM>, IPagedResult<IVehicleModel>>().ReverseMap();
         }

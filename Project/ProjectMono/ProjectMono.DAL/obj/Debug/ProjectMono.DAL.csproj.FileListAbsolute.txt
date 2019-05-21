@@ -10,3 +10,6 @@ C:\Users\Ging\source\repos\ProjectMono\ProjectMono.DAL\obj\Debug\ProjectMono.DAL
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.DAL\obj\Debug\ProjectMono.DAL.csproj.CopyComplete
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.DAL\obj\Debug\ProjectMono.DAL.dll
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.DAL\obj\Debug\ProjectMono.DAL.pdb
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.DAL\obj\Debug\ProjectMono.DAL.Migrations.InitialCreate.resources
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.DAL\obj\Debug\ProjectMono.DAL.csproj.GenerateResource.cache
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.DAL\obj\Debug\ProjectMono.DAL.Migrations.FirstMigration.resources

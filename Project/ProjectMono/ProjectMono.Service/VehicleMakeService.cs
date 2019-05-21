@@ -20,10 +20,9 @@ namespace ProjectMono.Service
         {
             this.repository = repository;
         }
-        public async Task<int> AddVehicleMakeAsync(IVehicleMake entity)
+        public async Task AddVehicleMakeAsync(IVehicleMake entity)
         {
-            int id = await repository.AddVehicleMakeAsync(entity);
-            return id;
+            await repository.AddVehicleMakeAsync(entity);
         }
 
         public async Task DeleteVehicleMakeAsync(IVehicleMake entity)

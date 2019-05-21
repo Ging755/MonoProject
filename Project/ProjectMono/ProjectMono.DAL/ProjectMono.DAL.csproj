@@ -50,12 +50,29 @@
   <ItemGroup>
     <Compile Include="Entities\VehicleMakeEntity.cs" />
     <Compile Include="Entities\VehicleModelEntity.cs" />
+    <Compile Include="Migrations\201905181102150_InitialCreate.cs" />
+    <Compile Include="Migrations\201905181102150_InitialCreate.Designer.cs">
+      <DependentUpon>201905181102150_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905181111072_FirstMigration.cs" />
+    <Compile Include="Migrations\201905181111072_FirstMigration.Designer.cs">
+      <DependentUpon>201905181111072_FirstMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VehicleContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201905181102150_InitialCreate.resx">
+      <DependentUpon>201905181102150_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905181111072_FirstMigration.resx">
+      <DependentUpon>201905181111072_FirstMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

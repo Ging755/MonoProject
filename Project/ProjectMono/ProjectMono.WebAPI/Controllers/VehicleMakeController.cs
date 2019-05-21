@@ -39,7 +39,7 @@ namespace ProjectMono.WebAPI.Controllers
                 Page = page ?? 1,
                 PageSize = 5
             };
-            var vehicleMakeList = AutoMapper.Mapper.Map<IPagedResult<VehicleMakeVM>>(service.GetVehicleMakesAsync(sortParameters, filterParameters, pageParameters));
+            var vehicleMakeList = AutoMapper.Mapper.Map<IPagedResult<VehicleMakeVM>>(await service.GetVehicleMakesAsync(sortParameters, filterParameters, pageParameters));
             return Ok(vehicleMakeList);
         }
 
@@ -53,7 +53,7 @@ namespace ProjectMono.WebAPI.Controllers
             }
             else
             {
-                var VehicleMake = AutoMapper.Mapper.Map<VehicleMakeVM>(service.GetVehicleMakeAsync((int)id));
+                var VehicleMake = AutoMapper.Mapper.Map<VehicleMakeVM>(await service.GetVehicleMakeAsync((int)id));
                 if(VehicleMake == null)
                 {
                     return NotFound();
@@ -68,18 +68,14 @@ namespace ProjectMono.WebAPI.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
-                {
-                    int id = await service.AddVehicleMakeAsync(AutoMapper.Mapper.Map<IVehicleMake>(VM));
-                    return Created(Url.Link("DefaultApi", new { controller = "VehicleMake", id = id }), await service.GetVehicleMakeAsync(id));
-                }
+                await service.AddVehicleMakeAsync(AutoMapper.Mapper.Map<IVehicleMake>(VM));
+                return Ok();
             }
             catch (DataException)
             {
                 ModelState.AddModelError("", "Something went wrong with creating VehicleMake");
                 return InternalServerError();
             }
-            return BadRequest();
         }
 
         [HttpPut]
@@ -92,22 +88,18 @@ namespace ProjectMono.WebAPI.Controllers
                 {
                     return BadRequest();
                 }
-                if (ModelState.IsValid)
-                {
                     if(service.GetVehicleMakeAsync((int) id) == null)
                     {
                         return BadRequest();
                     }
                     await service.UpdateVehicleMakeAsync(AutoMapper.Mapper.Map<IVehicleMake>(VM));
                     return Ok();
-                }
             }
             catch
             {
                 ModelState.AddModelError("", "Something went wrong can't update VehicleMake");
                 return InternalServerError();
             }
-            return BadRequest();
         }
 
         [HttpDelete]
