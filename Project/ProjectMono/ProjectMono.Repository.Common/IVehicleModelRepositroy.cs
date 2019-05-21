@@ -15,7 +15,7 @@ namespace ProjectMono.Repository.Common
         Task AddVehicleModelAsync(IVehicleModel entity);
         //Read
         Task<IVehicleModel> GetVehicleModelAsync(int id);
-        Task<IPagedResult<IVehicleMake>> GetVehicleModelsAsync(ISortParameters sortParameters, IFilterParameters filterParameters, IPageParameters pageParameters);
+        Task<IPagedResult<IVehicleModel>> GetVehicleModelsAsync(ISortParameters sortParameters, IFilterParameters filterParameters, IPageParameters pageParameters);
         //Update
         Task UpdateVehicleModelAsync(IVehicleModel entity);
         //Delete

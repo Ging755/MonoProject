@@ -31,8 +31,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=8.1.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.1.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,7 +52,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GenericRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UOFW\IUnitOfWorkFactory.cs" />
+    <Compile Include="UOFW\UnitOfWork.cs" />
+    <Compile Include="VehicleMakeRepository.cs" />
+    <Compile Include="VehicleModelRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectMono.Common\ProjectMono.Common.csproj">
+      <Project>{BE3E245F-D584-49FB-A1DC-41667075BF75}</Project>
+      <Name>ProjectMono.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectMono.DAL\ProjectMono.DAL.csproj">
+      <Project>{295277ED-DBEA-4934-83EF-C2EB7E4F2308}</Project>
+      <Name>ProjectMono.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectMono.Model.Common\ProjectMono.Model.Common.csproj">
+      <Project>{D5853501-68DE-47B0-809B-243827073C7D}</Project>
+      <Name>ProjectMono.Model.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectMono.Repository.Common\ProjectMono.Repository.Common.csproj">
+      <Project>{A307AEDA-1112-4891-B469-C43E9F131516}</Project>
+      <Name>ProjectMono.Repository.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
