@@ -7,3 +7,5 @@ C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.M
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.Model.Common.pdb
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.csprojAssemblyReference.cache
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.csproj.CopyComplete
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\bin\Debug\Ninject.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\bin\Debug\Ninject.xml

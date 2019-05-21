@@ -17,9 +17,12 @@ namespace ProjectMono.Common.PagedResultCommon
         /// The size of this page. 
         /// </summary> 
         int PageSize { get; set; }
+
         /// <summary> 
         /// The total number of pages available. 
         /// </summary> 
+        int TotalNumberOfPages { get; set; }
+
         IEnumerable<T> Results { get; set; }
     }
 }

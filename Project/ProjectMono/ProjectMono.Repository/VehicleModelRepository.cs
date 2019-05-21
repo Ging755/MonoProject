@@ -20,9 +20,11 @@ namespace ProjectMono.Repository
         {
             Repository = repository;
         }
-        public async Task AddVehicleModelAsync(IVehicleModel entity)
+        public async Task<int> AddVehicleModelAsync(IVehicleModel entity)
         {
             await Repository.AddAsync(AutoMapper.Mapper.Map<VehicleModelEntity>(entity));
+            var temp = Repository.GetVehiclesAsync().OrderByDescending(x => x.Id).First();
+            return temp.Id;
         }
 
         public async Task DeleteVehicleModelAsync(IVehicleModel entity)
@@ -86,10 +88,14 @@ namespace ProjectMono.Repository
             }
             vehicleModelList = vehicleModelList.Skip((int)skipAmount).Take(pageParameters.PageSize);
             vehicleModelList = vehicleModelList.ToList();
+            var totalNumberOfRecords = vehicleModelList.Count();
+            var mod = totalNumberOfRecords % pageParameters.PageSize;
+            var totalPageCount = (totalNumberOfRecords / pageParameters.PageSize) + (mod == 0 ? 0 : 1);
             PagedResult<IVehicleModel> IPagedVehicleModel = new PagedResult<IVehicleModel>()
             {
                 PageNumber = (int)pageParameters.Page,
                 PageSize = pageParameters.PageSize,
+                TotalNumberOfPages = totalPageCount,
                 Results = AutoMapper.Mapper.Map<IEnumerable<IVehicleModel>>(vehicleModelList)
             };
             return IPagedVehicleModel;

@@ -25,3 +25,11 @@ C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.DAL.dll.config
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service\bin\Debug\AutoMapper.pdb
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service\bin\Debug\AutoMapper.xml
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.Service.dll.config
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service\bin\Debug\Ninject.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.Model.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service\bin\Debug\Ninject.Extensions.Factory.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service\bin\Debug\Castle.Core.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service\bin\Debug\Ninject.xml
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.Model.pdb
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service\bin\Debug\Ninject.Extensions.Factory.xml

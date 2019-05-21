@@ -12,7 +12,7 @@ namespace ProjectMono.Repository.Common
     public interface IVehicleModelRepository
     {
         //Create
-        Task AddVehicleModelAsync(IVehicleModel entity);
+        Task<int> AddVehicleModelAsync(IVehicleModel entity);
         //Read
         Task<IVehicleModel> GetVehicleModelAsync(int id);
         Task<IPagedResult<IVehicleModel>> GetVehicleModelsAsync(ISortParameters sortParameters, IFilterParameters filterParameters, IPageParameters pageParameters);

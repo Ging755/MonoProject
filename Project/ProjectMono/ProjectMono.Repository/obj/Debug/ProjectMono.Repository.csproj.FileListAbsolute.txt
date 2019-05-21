@@ -23,3 +23,10 @@ C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository\bin\Debug\AutoMapp
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository\bin\Debug\EntityFramework.xml
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository\obj\Debug\ProjectMono.Repository.csproj.CopyComplete
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository\bin\Debug\Castle.Core.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository\bin\Debug\Ninject.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository\bin\Debug\Ninject.Extensions.Factory.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository\bin\Debug\ProjectMono.Model.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository\bin\Debug\Ninject.xml
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository\bin\Debug\Ninject.Extensions.Factory.xml
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository\bin\Debug\ProjectMono.Model.pdb

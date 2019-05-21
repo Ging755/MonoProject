@@ -14,3 +14,13 @@ C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\E
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\obj\Debug\ProjectMono.Repository.Common.csprojAssemblyReference.cache
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\obj\Debug\ProjectMono.Repository.Common.csproj.CopyComplete
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\AutoMapper.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\Ninject.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.DAL.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Model.dll
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\AutoMapper.pdb
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\AutoMapper.xml
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\Ninject.xml
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.DAL.pdb
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.DAL.dll.config
+C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Model.pdb
