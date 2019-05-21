@@ -31,6 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=8.1.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.1.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoMapperProfile.cs" />
+    <Compile Include="DImodule.cs" />
     <Compile Include="PagedResultCommon\IPagedResult.cs" />
     <Compile Include="PagedResult\PagedResult.cs" />
     <Compile Include="ParametersCommon\IFilterParameters.cs" />
@@ -50,6 +58,23 @@
     <Compile Include="Parameters\PageParameters.cs" />
     <Compile Include="Parameters\SortParameters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectMono.DAL\ProjectMono.DAL.csproj">
+      <Project>{295277ED-DBEA-4934-83EF-C2EB7E4F2308}</Project>
+      <Name>ProjectMono.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectMono.Model.Common\ProjectMono.Model.Common.csproj">
+      <Project>{D5853501-68DE-47B0-809B-243827073C7D}</Project>
+      <Name>ProjectMono.Model.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectMono.Model\ProjectMono.Model.csproj">
+      <Project>{A573464D-4E0A-4DCD-9A77-7D3349A5E409}</Project>
+      <Name>ProjectMono.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,6 +13,11 @@ namespace ProjectMono.WebAPI
     {
         protected void Application_Start()
         {
+            AutoMapper.Mapper.Initialize(x =>
+            {
+                x.AddProfile<ProjectMono.WebAPI.App_Start.AutoMapperProfile>();
+                x.AddProfile<ProjectMono.Common.AutoMapperProfile>();
+            });
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
