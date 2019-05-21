@@ -41,7 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IVehicleMakeService.cs" />
+    <Compile Include="IVehicleModelService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectMono.Common\ProjectMono.Common.csproj">
+      <Project>{BE3E245F-D584-49FB-A1DC-41667075BF75}</Project>
+      <Name>ProjectMono.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectMono.Model.Common\ProjectMono.Model.Common.csproj">
+      <Project>{D5853501-68DE-47B0-809B-243827073C7D}</Project>
+      <Name>ProjectMono.Model.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
