@@ -19,3 +19,24 @@ C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Common\bin\Debug\AutoMapper.x
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Common\bin\Debug\Ninject.xml
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Common\bin\Debug\EntityFramework.xml
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Common\obj\Debug\ProjectMono.Common.csproj.CopyComplete
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Common\bin\Debug\ProjectMono.Common.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Common\bin\Debug\ProjectMono.Common.pdb
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Common\bin\Debug\AutoMapper.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Common\bin\Debug\Ninject.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Common\bin\Debug\ProjectMono.DAL.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Common\bin\Debug\ProjectMono.Model.Common.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Common\bin\Debug\ProjectMono.Model.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Common\bin\Debug\EntityFramework.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Common\bin\Debug\ProjectMono.DAL.pdb
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Common\bin\Debug\ProjectMono.DAL.dll.config
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Common\bin\Debug\ProjectMono.Model.Common.pdb
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Common\bin\Debug\ProjectMono.Model.pdb
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Common\bin\Debug\AutoMapper.pdb
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Common\bin\Debug\AutoMapper.xml
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Common\bin\Debug\Ninject.xml
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Common\bin\Debug\EntityFramework.xml
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Common\obj\Debug\ProjectMono.Common.csprojAssemblyReference.cache
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Common\obj\Debug\ProjectMono.Common.csproj.CoreCompileInputs.cache
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Common\obj\Debug\ProjectMono.Common.csproj.CopyComplete
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Common\obj\Debug\ProjectMono.Common.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Common\obj\Debug\ProjectMono.Common.pdb

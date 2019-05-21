@@ -17,32 +17,30 @@ namespace ProjectMono.Repository
     public class VehicleModelRepository : IVehicleModelRepository
     {
         protected IGenericRepository<VehicleModelEntity> Repository;
-        protected IGenericRepository<VehicleMakeEntity> RepositoryMake;
-        public VehicleModelRepository(IGenericRepository<VehicleModelEntity> repository, IGenericRepository<VehicleMakeEntity> RepositoryMake)
+        public VehicleModelRepository(IGenericRepository<VehicleModelEntity> repository)
         {
             Repository = repository;
-            this.RepositoryMake = RepositoryMake;
         }
         public async Task AddVehicleModelAsync(IVehicleModel entity)
         {
             var temp = AutoMapper.Mapper.Map<VehicleModelEntity>(entity);
-            temp.VehicleMakeEntityId = entity.MakeId;
-           await Repository.AddAsync(temp);
+           // temp.VehicleMakeEntityId = entity.MakeId;
+           await Repository.AddAsync(AutoMapper.Mapper.Map<VehicleModelEntity>(entity));
         }
 
         public async Task DeleteVehicleModelAsync(IVehicleModel entity)
         {
-            var temp = AutoMapper.Mapper.Map<VehicleModelEntity>(entity);
-            temp.VehicleMakeEntityId = entity.MakeId;
-            await Repository.DeleteAsync(temp);
+            //var temp = AutoMapper.Mapper.Map<VehicleModelEntity>(entity);
+            // temp.VehicleMakeEntityId = entity.MakeId;
+            await Repository.DeleteAsync(AutoMapper.Mapper.Map<VehicleModelEntity>(entity));
         }
 
         public async Task<IVehicleModel> GetVehicleModelAsync(int id)
         {
-            var temp = await Repository.GetVehicleAsync(id);
-            var tempModel = AutoMapper.Mapper.Map<IVehicleModel>(temp);
-            tempModel.MakeId = temp.VehicleMakeEntityId;
-            return tempModel;
+            // var temp = await Repository.GetVehicleAsync(id);
+            // var tempModel = AutoMapper.Mapper.Map<IVehicleModel>(temp);
+            // tempModel.MakeId = temp.VehicleMakeEntityId;
+            return AutoMapper.Mapper.Map<IVehicleModel>(await Repository.GetVehicleAsync(id)); 
         }
 
         public async Task<IPagedResult<IVehicleModel>> GetVehicleModelsAsync(ISortParameters sortParameters, IFilterParameters filterParameters, IPageParameters pageParameters, int? makeId)
@@ -145,9 +143,9 @@ namespace ProjectMono.Repository
 
         public async Task UpdateVehicleModelAsync(IVehicleModel entity)
         {
-            var temp = AutoMapper.Mapper.Map<VehicleModelEntity>(entity);
-            temp.VehicleMakeEntityId = entity.MakeId;
-            await Repository.EditAsync(temp);
+            // var temp = AutoMapper.Mapper.Map<VehicleModelEntity>(entity);
+            // temp.VehicleMakeEntityId = entity.MakeId;
+            await Repository.EditAsync(AutoMapper.Mapper.Map<VehicleModelEntity>(entity));
         }
     }
 }

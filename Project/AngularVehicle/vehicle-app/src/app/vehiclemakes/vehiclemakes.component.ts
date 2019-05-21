@@ -1,7 +1,6 @@
 import { Component, OnInit, ɵCodegenComponentFactoryResolver } from '@angular/core';
 import { PagedVehicleMake } from '../pagedvehiclemake';
 import { VehicleMake } from '../vehiclemake';
-import {PAGEDVEHICLEMAKE} from "../mock-pagedvehiclemake"
 import { VehicleMakeService } from '../vehiclemake.service';
 
 @Component({

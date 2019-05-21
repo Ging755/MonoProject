@@ -24,3 +24,29 @@ C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\N
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.DAL.pdb
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.DAL.dll.config
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Model.pdb
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Repository.Common.dll.config
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Repository.Common.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Repository.Common.pdb
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\bin\Debug\EntityFramework.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\bin\Debug\EntityFramework.SqlServer.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Common.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Model.Common.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\bin\Debug\AutoMapper.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.DAL.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Model.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\bin\Debug\Ninject.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Common.pdb
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Model.Common.pdb
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\bin\Debug\EntityFramework.xml
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\bin\Debug\EntityFramework.SqlServer.xml
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\bin\Debug\AutoMapper.pdb
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\bin\Debug\AutoMapper.xml
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.DAL.pdb
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.DAL.dll.config
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Model.pdb
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\bin\Debug\Ninject.xml
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\obj\Debug\ProjectMono.Repository.Common.csprojAssemblyReference.cache
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\obj\Debug\ProjectMono.Repository.Common.csproj.CoreCompileInputs.cache
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\obj\Debug\ProjectMono.Repository.Common.csproj.CopyComplete
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\obj\Debug\ProjectMono.Repository.Common.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Repository.Common\obj\Debug\ProjectMono.Repository.Common.pdb

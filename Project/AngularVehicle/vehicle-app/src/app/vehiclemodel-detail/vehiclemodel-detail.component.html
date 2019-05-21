@@ -1,0 +1,17 @@
+<div *ngIf="vehiclemodel">
+    <h2>{{vehiclemodel.Name | uppercase}} Details</h2>
+    <div><span>Id: </span>{{vehiclemodel.Id}}</div>
+    <div>
+        <label>Name:
+          <input [(ngModel)]="vehiclemodel.Name" placeholder="name"/>
+        </label>
+        <label>Abrv:
+            <input [(ngModel)]="vehiclemodel.Abrv" placeholder="name"/>
+        </label>
+        <label>Make Id:
+          <span>{{vehiclemodel.MakeId}}</span>
+        </label>
+    </div>
+    <button (click)="Edit(vehiclemodel)">Edit</button>
+  </div>
+  

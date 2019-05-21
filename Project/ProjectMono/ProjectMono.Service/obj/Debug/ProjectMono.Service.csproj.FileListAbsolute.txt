@@ -33,3 +33,38 @@ C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service\bin\Debug\Castle.Core
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service\bin\Debug\Ninject.xml
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.Model.pdb
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Service\bin\Debug\Ninject.Extensions.Factory.xml
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.Service.dll.config
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.Service.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.Service.pdb
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\Ninject.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.Common.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.Model.Common.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.Repository.Common.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.Repository.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.Service.Common.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\AutoMapper.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.DAL.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.Model.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\EntityFramework.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\Ninject.Extensions.Factory.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\Castle.Core.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.Common.pdb
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.Model.Common.pdb
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.Repository.Common.pdb
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.Repository.Common.dll.config
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.Repository.pdb
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.Repository.dll.config
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.Service.Common.pdb
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\Ninject.xml
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\AutoMapper.pdb
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\AutoMapper.xml
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.DAL.pdb
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.DAL.dll.config
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\ProjectMono.Model.pdb
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\EntityFramework.xml
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\bin\Debug\Ninject.Extensions.Factory.xml
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\obj\Debug\ProjectMono.Service.csprojAssemblyReference.cache
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\obj\Debug\ProjectMono.Service.csproj.CoreCompileInputs.cache
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\obj\Debug\ProjectMono.Service.csproj.CopyComplete
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\obj\Debug\ProjectMono.Service.dll
+G:\ProjectMono all versions\V17\ProjectMono\ProjectMono.Service\obj\Debug\ProjectMono.Service.pdb

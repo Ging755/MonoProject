@@ -13,9 +13,12 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace ProjectMono.WebAPI.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
+
     public class VehicleModelController : ApiController
     {
 
@@ -42,8 +45,7 @@ namespace ProjectMono.WebAPI.Controllers
                 PageSize = 0
             };
             var vehicleModelListPaged = AutoMapper.Mapper.Map<IPagedResult<VehicleModelVM>>(await service.GetVehicleModelsAsync(sortParameters, filterParameters, pageParameters, 0));
-            var vehicleModelList = vehicleModelListPaged.Results;
-            return Ok(vehicleModelList);
+            return Ok(vehicleModelListPaged);
         }
         [HttpGet]
         // GET: api/VehicleModel

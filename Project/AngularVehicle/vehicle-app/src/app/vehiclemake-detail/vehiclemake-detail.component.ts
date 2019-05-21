@@ -10,10 +10,8 @@ import { VehicleMakeService } from '../vehiclemake.service';
 export class VehiclemakeDetailComponent implements OnInit {
   @Input() vehiclemake : VehicleMake;
   constructor(private vehiclemakeservice : VehicleMakeService) { }
-
   ngOnInit() {
   }
-
   Edit(vehiclemake : VehicleMake) : void{
     if(!vehiclemake.Name || !vehiclemake.Abrv){
       return;

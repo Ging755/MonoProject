@@ -18,12 +18,20 @@ export class VehicleMakeService {
 
   constructor(private http: HttpClient, private messageService : MessageService) { }
   private vehiclemakesUrl = "http://localhost:53282/api/VehicleMake"
+    /**GET vehiclemakes from the server */
+    getVehicleMakesNotPaged() : Observable<PagedVehicleMake>{
+      return this.http.get<PagedVehicleMake>(this.vehiclemakesUrl)
+      .pipe(
+        tap(_ => this.log('fetched vehiclemakes')),
+        catchError(this.handleError<PagedVehicleMake>('getVehicleMakes', ))
+      );
+    }
   /**GET vehiclemakes from the server */
   getVehicleMakes(page : number, search : string, sort : string, direction : string) : Observable<PagedVehicleMake>{
     return this.http.get<PagedVehicleMake>(this.vehiclemakesUrl + "/?page=" + page + "&search=" + search + "&sort=" + sort + "&direction=" + direction)
     .pipe(
       tap(_ => this.log('fetched vehiclemakes')),
-      catchError(this.handleError<PagedVehicleMake>('getVehicleMakes', []))
+      catchError(this.handleError<PagedVehicleMake>('getVehicleMakes', ))
     );
   }
 
@@ -43,7 +51,7 @@ export class VehicleMakeService {
     );
   }
 
-    /** DELETE: delete the hero from the server */
+    /** DELETE: delete the model from the server */
   deleteVehicleMake(vehiclemake : VehicleMake): Observable<VehicleMake> {
     return this.http.delete<VehicleMake>(this.vehiclemakesUrl + "/" + vehiclemake.Id, httpOptions).pipe(
       tap(_ => this.log("deleted vehiclemake id=${vehiclemake.Id}")),
