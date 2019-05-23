@@ -11,8 +11,11 @@ namespace ProjectMono.Model
     public class VehicleModel : IVehicleModel
     {
         public int Id { get; set; }
+        //VehicleModel name
         public string Name { get; set; }
+        //VehicleModel Abbreviation
         public string Abrv { get; set; }
+        //VehicleModel's Make Id
         public int MakeId { get; set; }
     }
 }

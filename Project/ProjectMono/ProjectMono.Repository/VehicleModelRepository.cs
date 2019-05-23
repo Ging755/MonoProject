@@ -21,25 +21,24 @@ namespace ProjectMono.Repository
         {
             Repository = repository;
         }
+
+        //Create
         public async Task AddVehicleModelAsync(IVehicleModel entity)
         {
-            var temp = AutoMapper.Mapper.Map<VehicleModelEntity>(entity);
-           // temp.VehicleMakeEntityId = entity.MakeId;
            await Repository.AddAsync(AutoMapper.Mapper.Map<VehicleModelEntity>(entity));
         }
 
+        //Delete
+
         public async Task DeleteVehicleModelAsync(IVehicleModel entity)
         {
-            //var temp = AutoMapper.Mapper.Map<VehicleModelEntity>(entity);
-            // temp.VehicleMakeEntityId = entity.MakeId;
             await Repository.DeleteAsync(AutoMapper.Mapper.Map<VehicleModelEntity>(entity));
         }
 
+
+        //Read
         public async Task<IVehicleModel> GetVehicleModelAsync(int id)
         {
-            // var temp = await Repository.GetVehicleAsync(id);
-            // var tempModel = AutoMapper.Mapper.Map<IVehicleModel>(temp);
-            // tempModel.MakeId = temp.VehicleMakeEntityId;
             return AutoMapper.Mapper.Map<IVehicleModel>(await Repository.GetVehicleAsync(id)); 
         }
 
@@ -52,55 +51,55 @@ namespace ProjectMono.Repository
                 case "Name":
                     if (!string.IsNullOrEmpty(filterParameters.Search) && makeId != 0)
                     {
-                        vehicleModelList = await Repository.GetVehiclesAsync().Where(x => x.Name.ToUpper().Contains(filterParameters.Search) && x.VehicleMakeEntityId == makeId).OrderBy(x => x.Name).ToListAsync();
+                        vehicleModelList = Repository.GetVehiclesAsync().Where(x => x.Name.ToUpper().Contains(filterParameters.Search) && x.VehicleMakeEntityId == makeId).OrderBy(x => x.Name);
                     }
                     else if (!string.IsNullOrEmpty(filterParameters.Search))
                     {
-                        vehicleModelList = await Repository.GetVehiclesAsync().Where(x => x.Name.ToUpper().Contains(filterParameters.Search.ToUpper())).OrderBy(x => x.Name).ToListAsync();
+                        vehicleModelList = Repository.GetVehiclesAsync().Where(x => x.Name.ToUpper().Contains(filterParameters.Search.ToUpper())).OrderBy(x => x.Name);
                     }
                     else if (makeId != 0)
                     {
-                        vehicleModelList = await Repository.GetVehiclesAsync().Where(x => x.VehicleMakeEntityId == makeId).OrderBy(x => x.Name).ToListAsync();
+                        vehicleModelList = Repository.GetVehiclesAsync().Where(x => x.VehicleMakeEntityId == makeId).OrderBy(x => x.Name);
                     }
                     else
                     {
-                        vehicleModelList = await Repository.GetVehiclesAsync().OrderBy(x => x.Name).ToListAsync();
+                        vehicleModelList = Repository.GetVehiclesAsync().OrderBy(x => x.Name);
                     }
                     break;
                 case "Abrv":
                     if (!string.IsNullOrEmpty(filterParameters.Search) && makeId != 0)
                     {
-                        vehicleModelList = await Repository.GetVehiclesAsync().Where(x => x.Abrv.ToUpper().Contains(filterParameters.Search) && x.VehicleMakeEntityId == makeId).OrderBy(x => x.Abrv).ToListAsync();
+                        vehicleModelList = Repository.GetVehiclesAsync().Where(x => x.Abrv.ToUpper().Contains(filterParameters.Search) && x.VehicleMakeEntityId == makeId).OrderBy(x => x.Abrv);
                     }
                     else if (!string.IsNullOrEmpty(filterParameters.Search))
                     {
-                        vehicleModelList = await Repository.GetVehiclesAsync().Where(x => x.Abrv.ToUpper().Contains(filterParameters.Search.ToUpper())).OrderBy(x => x.Abrv).ToListAsync();
+                        vehicleModelList = Repository.GetVehiclesAsync().Where(x => x.Abrv.ToUpper().Contains(filterParameters.Search.ToUpper())).OrderBy(x => x.Abrv);
                     }
                     else if (makeId != 0)
                     {
-                        vehicleModelList = await Repository.GetVehiclesAsync().Where(x => x.VehicleMakeEntityId == makeId).OrderBy(x => x.Abrv).ToListAsync();
+                        vehicleModelList = Repository.GetVehiclesAsync().Where(x => x.VehicleMakeEntityId == makeId).OrderBy(x => x.Abrv);
                     }
                     else
                     {
-                        vehicleModelList = await Repository.GetVehiclesAsync().OrderBy(x => x.Abrv).ToListAsync();
+                        vehicleModelList = Repository.GetVehiclesAsync().OrderBy(x => x.Abrv);
                     }
                     break;
                 default:
                     if (!string.IsNullOrEmpty(filterParameters.Search) && makeId != 0)
                     {
-                        vehicleModelList = await Repository.GetVehiclesAsync().Where(x => x.Name.ToUpper().Contains(filterParameters.Search) && x.VehicleMakeEntityId == makeId).OrderBy(x => x.Id).ToListAsync();
+                        vehicleModelList = Repository.GetVehiclesAsync().Where(x => x.Name.ToUpper().Contains(filterParameters.Search) && x.VehicleMakeEntityId == makeId).OrderBy(x => x.Id);
                     }
                     else if (!string.IsNullOrEmpty(filterParameters.Search))
                     {
-                        vehicleModelList = await Repository.GetVehiclesAsync().Where(x => x.Name.ToUpper().Contains(filterParameters.Search.ToUpper())).OrderBy(x => x.Id).ToListAsync();
+                        vehicleModelList = Repository.GetVehiclesAsync().Where(x => x.Name.ToUpper().Contains(filterParameters.Search.ToUpper())).OrderBy(x => x.Id);
                     }
                     else if (makeId != 0)
                     {
-                        vehicleModelList = await Repository.GetVehiclesAsync().Where(x => x.VehicleMakeEntityId == makeId).OrderBy(x => x.Id).ToListAsync();
+                        vehicleModelList = Repository.GetVehiclesAsync().Where(x => x.VehicleMakeEntityId == makeId).OrderBy(x => x.Id);
                     }
                     else
                     {
-                        vehicleModelList = await Repository.GetVehiclesAsync().OrderBy(x => x.Id).ToListAsync();
+                        vehicleModelList = Repository.GetVehiclesAsync().OrderBy(x => x.Id);
                     }
                     break;
             }
@@ -108,7 +107,7 @@ namespace ProjectMono.Repository
             {
                 if (sortParameters.SortDirection.ToUpper() == "DESCENDING")
                 {
-                    vehicleModelList = vehicleModelList.Reverse();
+                    vehicleModelList.Reverse();
                 }
             }
             if(pageParameters.PageSize != 0)
@@ -141,10 +140,9 @@ namespace ProjectMono.Repository
             return IPagedVehicleModel;
         }
 
+        //Update
         public async Task UpdateVehicleModelAsync(IVehicleModel entity)
         {
-            // var temp = AutoMapper.Mapper.Map<VehicleModelEntity>(entity);
-            // temp.VehicleMakeEntityId = entity.MakeId;
             await Repository.EditAsync(AutoMapper.Mapper.Map<VehicleModelEntity>(entity));
         }
     }

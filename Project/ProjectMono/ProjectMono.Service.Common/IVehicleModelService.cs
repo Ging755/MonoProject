@@ -18,8 +18,8 @@ namespace ProjectMono.Service.Common
         Task<IVehicleModel> GetVehicleModelAsync(int id);
         Task<IPagedResult<IVehicleModel>> GetVehicleModelsAsync(ISortParameters sortParameters, IFilterParameters filterParameters, IPageParameters pageParameters, int? makeId);
         //Update
-        Task UpdateVehicleModelAsync(IVehicleModel entity);
+        Task<Boolean> UpdateVehicleModelAsync(IVehicleModel entity);
         //Delete
-        Task DeleteVehicleModelAsync(IVehicleModel entity);
+        Task<Boolean> DeleteVehicleModelAsync(int id);
     }
 }

@@ -19,27 +19,28 @@ namespace ProjectMono.Repository
             this.context = context;
             this.uowFactory = uowFactory;
         }
+        //Create
         public virtual async Task AddAsync(T entity)
         {
             var unitOfWork = uowFactory.CreateUnitOfWork();
             await unitOfWork.AddAsync(entity);
             await unitOfWork.CommitAsync();
         }
-
+        //Delete
         public virtual async Task DeleteAsync(T entity)
         {
             var unitOfWork = uowFactory.CreateUnitOfWork();
             await unitOfWork.DeleteAsync(entity);
             await unitOfWork.CommitAsync();
         }
-
+        //Update
         public virtual async Task EditAsync(T entity)
         {
             var unitOfWork = uowFactory.CreateUnitOfWork();
             await unitOfWork.UpdateAsync(entity);
             await unitOfWork.CommitAsync();
         }
-
+        //Read
         public virtual async Task<T> GetVehicleAsync(int id)
         {
             return await context.Set<T>().FindAsync(id);

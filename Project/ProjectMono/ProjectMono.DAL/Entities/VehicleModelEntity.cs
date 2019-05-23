@@ -11,9 +11,13 @@ namespace ProjectMono.DAL.Entities
     {
         [Key]
         public int Id { get; set; }
+        //Name of VehicleModelEntity
         public string Name { get; set; }
+        //Abbreviation of VehicleMakeEntity
         public string Abrv { get; set; }
+        //VehicleMakeEntityId
         public int VehicleMakeEntityId { get; set; }
+        //VehicleMakeEntity of VehicleModelEntity
         public virtual VehicleMakeEntity VehicleMake { get; set; }
     }
 }

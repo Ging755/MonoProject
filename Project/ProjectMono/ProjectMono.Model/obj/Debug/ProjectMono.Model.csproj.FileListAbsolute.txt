@@ -14,3 +14,19 @@ C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\bin\Debug\EntityFramewo
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.DAL.pdb
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.DAL.dll.config
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model\bin\Debug\EntityFramework.xml
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.Model.dll
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.Model.pdb
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model\bin\Debug\Ninject.dll
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.DAL.dll
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.Model.Common.dll
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model\bin\Debug\EntityFramework.dll
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.DAL.pdb
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.DAL.dll.config
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.Model.Common.pdb
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model\bin\Debug\Ninject.xml
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model\bin\Debug\EntityFramework.xml
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.csprojAssemblyReference.cache
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.csproj.CoreCompileInputs.cache
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.csproj.CopyComplete
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.dll
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.pdb

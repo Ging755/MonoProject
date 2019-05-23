@@ -28,28 +28,8 @@ namespace ProjectMono.WebAPI.Controllers
             this.service = service;
         }
         [HttpGet]
-        public async Task<IHttpActionResult> Get()
-        {
-            var sortParameters = new SortParameters()
-            {
-                Sort = "",
-                SortDirection = ""
-            };
-            var filterParameters = new FilterParameters()
-            {
-                Search = ""
-            };
-            var pageParameters = new PageParameters()
-            {
-                Page = null,
-                PageSize = 0
-            };
-            var vehicleModelListPaged = AutoMapper.Mapper.Map<IPagedResult<VehicleModelVM>>(await service.GetVehicleModelsAsync(sortParameters, filterParameters, pageParameters, 0));
-            return Ok(vehicleModelListPaged);
-        }
-        [HttpGet]
         // GET: api/VehicleModel
-        public async Task<IHttpActionResult> Get(int? page, string search, string sort, string direction, int? makeId)
+        public async Task<IHttpActionResult> Get(int? page, int? pagesize, string search, string sort, string direction, int? makeId)
         {
             var sortParameters = new SortParameters()
             {
@@ -63,7 +43,7 @@ namespace ProjectMono.WebAPI.Controllers
             var pageParameters = new PageParameters()
             {
                 Page = page ?? 1,
-                PageSize = 5
+                PageSize = pagesize ?? 5
             };
             if(makeId == null)
             {
@@ -118,11 +98,11 @@ namespace ProjectMono.WebAPI.Controllers
                 {
                     return BadRequest();
                 }
-                if (await service.GetVehicleModelAsync((int)id) == null)
+                var success = await service.UpdateVehicleModelAsync(AutoMapper.Mapper.Map<IVehicleModel>(VM));
+                if(!success)
                 {
                     return BadRequest();
                 }
-                await service.UpdateVehicleModelAsync(AutoMapper.Mapper.Map<IVehicleModel>(VM));
                 return Ok();
             }
             catch
@@ -144,11 +124,11 @@ namespace ProjectMono.WebAPI.Controllers
                 }
                 else
                 {
-                    if (await service.GetVehicleModelAsync((int)id) == null)
+                    var success = await service.DeleteVehicleModelAsync((int) id);
+                    if (!success)
                     {
                         return BadRequest();
                     }
-                    await service.DeleteVehicleModelAsync(await service.GetVehicleModelAsync((int)id));
                     return Ok();
                 }
             }

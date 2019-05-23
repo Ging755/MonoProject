@@ -20,29 +20,53 @@ namespace ProjectMono.Service
         {
             this.repository = repository;
         }
+
+        //Create
         public async Task AddVehicleMakeAsync(IVehicleMake entity)
         {
             await repository.AddVehicleMakeAsync(entity);
         }
 
-        public async Task DeleteVehicleMakeAsync(IVehicleMake entity)
+        //Delete
+        public async Task<Boolean> DeleteVehicleMakeAsync(int Id)
         {
-            await repository.DeleteVehicleMakeAsync(entity);
+            var entity = await repository.GetVehicleMakeAsync((int)Id);
+            if (entity != null)
+            {
+                await repository.DeleteVehicleMakeAsync(entity);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
+        //Read
+        //Gets a single VehicleMake by id from repository
         public async Task<IVehicleMake> GetVehicleMakeAsync(int id)
         {
             return await repository.GetVehicleMakeAsync(id);
         }
 
+        //Gets sorted, filtered and paged list of VehicleMakes from repository
         public async Task<IPagedResult<IVehicleMake>> GetVehicleMakesAsync(ISortParameters sortParameters, IFilterParameters filterParameters, IPageParameters pageParameters)
         {
             return await repository.GetVehicleMakesAsync(sortParameters, filterParameters, pageParameters);
         }
 
-        public async Task UpdateVehicleMakeAsync(IVehicleMake entity)
+        //Update
+        public async Task<Boolean> UpdateVehicleMakeAsync(IVehicleMake entity)
         {
-            await repository.UpdateVehicleMakeAsync(entity);
+            if (repository.GetVehicleMakeAsync(entity.Id) != null)
+            {
+                await repository.UpdateVehicleMakeAsync(entity);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

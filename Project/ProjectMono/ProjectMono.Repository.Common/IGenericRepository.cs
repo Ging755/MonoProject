@@ -9,14 +9,18 @@ namespace ProjectMono.Repository.Common
 {
     public interface IGenericRepository<T> where T : class
     {
+        //Read
         Task<T> GetVehicleAsync(int id);
 
         IDbSet<T> GetVehiclesAsync();
 
+        //Create
         Task AddAsync(T entity);
 
+        //Delete
         Task DeleteAsync(T entity);
 
+        //Update
         Task EditAsync(T entity);
     }
 }

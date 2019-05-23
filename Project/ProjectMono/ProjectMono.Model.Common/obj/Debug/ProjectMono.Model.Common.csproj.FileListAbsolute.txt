@@ -10,3 +10,15 @@ C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model.Common\bin\Debug\Projec
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model.Common\bin\Debug\ProjectMono.DAL.dll.config
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model.Common\bin\Debug\EntityFramework.xml
 C:\Users\Ging\source\repos\ProjectMono\ProjectMono.Model.Common\obj\Debug\ProjectMono.Model.Common.csproj.CopyComplete
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\bin\Debug\ProjectMono.Model.Common.dll
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\bin\Debug\ProjectMono.Model.Common.pdb
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\bin\Debug\ProjectMono.DAL.dll
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\bin\Debug\EntityFramework.dll
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\bin\Debug\ProjectMono.DAL.pdb
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\bin\Debug\ProjectMono.DAL.dll.config
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\bin\Debug\EntityFramework.xml
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\obj\Debug\ProjectMono.Model.Common.csprojAssemblyReference.cache
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\obj\Debug\ProjectMono.Model.Common.csproj.CoreCompileInputs.cache
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\obj\Debug\ProjectMono.Model.Common.csproj.CopyComplete
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\obj\Debug\ProjectMono.Model.Common.dll
+C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\obj\Debug\ProjectMono.Model.Common.pdb

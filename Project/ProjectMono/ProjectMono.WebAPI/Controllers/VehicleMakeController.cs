@@ -25,28 +25,8 @@ namespace ProjectMono.WebAPI.Controllers
             this.service = service;
         }
         [HttpGet]
-        public async Task<IHttpActionResult> Get()
-        {
-            var sortParameters = new SortParameters()
-            {
-                Sort = "",
-                SortDirection = ""
-            };
-            var filterParameters = new FilterParameters()
-            {
-                Search = ""
-            };
-            var pageParameters = new PageParameters()
-            {
-                Page = null,
-                PageSize = 0
-            };
-            var vehicleMakeListPaged = AutoMapper.Mapper.Map<IPagedResult<VehicleMakeVM>>(await service.GetVehicleMakesAsync(sortParameters, filterParameters, pageParameters));
-            return Ok(vehicleMakeListPaged);
-        }
-        [HttpGet]
         // GET: api/VehicleMake
-        public async Task<IHttpActionResult> Get(int? page, string search, string sort, string direction)
+        public async Task<IHttpActionResult> Get(int? page,int? pagesize, string search, string sort, string direction)
         {
             var sortParameters = new SortParameters()
             {
@@ -60,7 +40,9 @@ namespace ProjectMono.WebAPI.Controllers
             var pageParameters = new PageParameters()
             {
                 Page = page ?? 1,
-                PageSize = 5
+                //I set the page size to 0, because as you can see in VehicleMakeService when page size is set to 0 it skips pagging. Because in one case I need to get all of the
+                //vehicle makes. Example is in angular part when I need to get all VehicleMakes when I'm creating a new VehicleModel, it needs VehicleMakeId to be created. So a drop down menu with all Vehicle Makes can be created from which VehicleMakeId can be chosen from.
+                PageSize = pagesize ?? 0
             };
             var vehicleMakeListPaged = AutoMapper.Mapper.Map<IPagedResult<VehicleMakeVM>>(await service.GetVehicleMakesAsync(sortParameters, filterParameters, pageParameters));
             return Ok(vehicleMakeListPaged);
@@ -110,12 +92,12 @@ namespace ProjectMono.WebAPI.Controllers
                 if (id == null)
                 {
                     return BadRequest();
-                }
-                if (service.GetVehicleMakeAsync((int)id) == null)
+                }           
+                var success = await service.UpdateVehicleMakeAsync(AutoMapper.Mapper.Map<IVehicleMake>(VM));
+                if (!success)
                 {
                     return BadRequest();
                 }
-                await service.UpdateVehicleMakeAsync(AutoMapper.Mapper.Map<IVehicleMake>(VM));
                 return Ok();
             }
             catch
@@ -137,11 +119,11 @@ namespace ProjectMono.WebAPI.Controllers
                 }
                 else
                 {
-                    if (await service.GetVehicleMakeAsync((int)id) == null)
+                    var success = await service.DeleteVehicleMakeAsync((int)id);
+                    if (!success)
                     {
                         return BadRequest();
                     }
-                    await service.DeleteVehicleMakeAsync(await service.GetVehicleMakeAsync((int)id));
                     return Ok();
                 }
             }
