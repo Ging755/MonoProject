@@ -62,11 +62,11 @@ export class VehiclemakesComponent implements OnInit {
     });
   }
   previousPage(): void {
-    this.pagging.previousPage(this.page, this.pagedvehiclemake.TotalNumberOfPages)
+    this.page = this.pagging.previousPage(this.page, this.pagedvehiclemake.TotalNumberOfPages)
     this.getVehicleMakes();
   }
   nextPage(): void{
-    this.pagging.nextPage(this.page, this.pagedvehiclemake.TotalNumberOfPages)
+    this.page = this.pagging.nextPage(this.page, this.pagedvehiclemake.TotalNumberOfPages)
     this.getVehicleMakes();
   }
 }

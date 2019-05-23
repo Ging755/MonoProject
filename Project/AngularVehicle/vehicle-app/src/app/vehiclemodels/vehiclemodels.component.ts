@@ -73,11 +73,11 @@ export class VehiclemodelsComponent implements OnInit {
     });
   }
   previousPage(): void {
-    this.pagging.previousPage(this.page, this.pagedvehiclemodel.TotalNumberOfPages)
+    this.page = this.pagging.previousPage(this.page, this.pagedvehiclemodel.TotalNumberOfPages)
     this.getVehicleModels();
   }
   nextPage(): void{
-    this.pagging.nextPage(this.page, this.pagedvehiclemodel.TotalNumberOfPages)
+    this.page = this.pagging.nextPage(this.page, this.pagedvehiclemodel.TotalNumberOfPages)
     this.getVehicleModels();
   }
 }
