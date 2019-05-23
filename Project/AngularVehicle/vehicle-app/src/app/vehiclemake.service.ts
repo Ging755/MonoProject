@@ -6,6 +6,7 @@ import { catchError, map, tap } from 'rxjs/operators'
 import {PagedVehicleMake} from "./pagedvehiclemake";
 import { MessageService } from './message.service';
 import { VehicleMake } from './vehiclemake';
+import { WebAPIURLs} from "./WebAPIUrls";
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -17,18 +18,9 @@ const httpOptions = {
 export class VehicleMakeService {
 
   constructor(private http: HttpClient, private messageService : MessageService) { }
-  private vehiclemakesUrl = "http://localhost:53282/api/VehicleMake"
-    /**GET vehiclemakes from the server */
-    getVehicleMakesNotPaged() : Observable<PagedVehicleMake>{
-      return this.http.get<PagedVehicleMake>(this.vehiclemakesUrl)
-      .pipe(
-        tap(_ => this.log('fetched vehiclemakes')),
-        catchError(this.handleError<PagedVehicleMake>('getVehicleMakes', ))
-      );
-    }
   /**GET vehiclemakes from the server */
-  getVehicleMakes(page : number, search : string, sort : string, direction : string) : Observable<PagedVehicleMake>{
-    return this.http.get<PagedVehicleMake>(this.vehiclemakesUrl + "/?page=" + page + "&search=" + search + "&sort=" + sort + "&direction=" + direction)
+  getVehicleMakes(page : number, pagesize:number, search : string, sort : string, direction : string) : Observable<PagedVehicleMake>{
+    return this.http.get<PagedVehicleMake>(WebAPIURLs.VehicleMakeUrl + "/?page=" + page + "&pagesize="+ pagesize + "&search=" + search + "&sort=" + sort + "&direction=" + direction)
     .pipe(
       tap(_ => this.log('fetched vehiclemakes')),
       catchError(this.handleError<PagedVehicleMake>('getVehicleMakes', ))
@@ -37,7 +29,7 @@ export class VehicleMakeService {
 
   /** POST: add a new vehiclemake to the server */
   addVehicleMake(vehiclemake : VehicleMake) : Observable<VehicleMake>{
-    return this.http.post<VehicleMake>(this.vehiclemakesUrl, vehiclemake, httpOptions).pipe(
+    return this.http.post<VehicleMake>(WebAPIURLs.VehicleMakeUrl, vehiclemake, httpOptions).pipe(
       tap((newVehicleMake : VehicleMake) => this.log("added vehicle make w/ id=${newVehicleMake.Id}")),
       catchError(this.handleError<VehicleMake>("addVehicleMake", ))
     );
@@ -45,7 +37,7 @@ export class VehicleMakeService {
 
   /** PUT: update the vehiclemake on the server */
   updateVehicleMake(vehiclemake : VehicleMake) : Observable<any>{
-    return this.http.put(this.vehiclemakesUrl + "/" + vehiclemake.Id, vehiclemake, httpOptions).pipe(
+    return this.http.put(WebAPIURLs.VehicleMakeUrl + "/" + vehiclemake.Id, vehiclemake, httpOptions).pipe(
       tap(_ => this.log("updated vehiclemake id=${vehiclemake.Id}")),
       catchError(this.handleError<any>('updateVehicleMake',))
     );
@@ -53,7 +45,7 @@ export class VehicleMakeService {
 
     /** DELETE: delete the model from the server */
   deleteVehicleMake(vehiclemake : VehicleMake): Observable<VehicleMake> {
-    return this.http.delete<VehicleMake>(this.vehiclemakesUrl + "/" + vehiclemake.Id, httpOptions).pipe(
+    return this.http.delete<VehicleMake>(WebAPIURLs.VehicleMakeUrl + "/" + vehiclemake.Id, httpOptions).pipe(
       tap(_ => this.log("deleted vehiclemake id=${vehiclemake.Id}")),
       catchError(this.handleError<VehicleMake>('deletedVehicleMake'))
     );

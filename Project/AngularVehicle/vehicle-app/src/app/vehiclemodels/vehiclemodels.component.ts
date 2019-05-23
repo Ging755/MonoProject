@@ -5,6 +5,7 @@ import { PagedVehicleModel } from '../pagedvehiclemodel';
 import { VehicleMakeService } from '../vehiclemake.service';
 import { VehicleMake } from '../vehiclemake';
 import { PagedVehicleMake } from '../pagedvehiclemake';
+import {Pagging} from "../pagging.component"
 
 @Component({
   selector: 'app-vehiclemodels',
@@ -13,14 +14,13 @@ import { PagedVehicleMake } from '../pagedvehiclemake';
 })
 export class VehiclemodelsComponent implements OnInit {
 
-  constructor(private vehiclemodelService : VehicleModelService, private vehiclemakeService : VehicleMakeService) { }
+  constructor(private pagging : Pagging, private vehiclemodelService : VehicleModelService, private vehiclemakeService : VehicleMakeService) { }
   test : string;
   page : number;
   search : string;
   orderby : string;
   orderbydirection : string;
   orderbymakeid : number;
-  pagging : boolean;
   vehiclemodel : VehicleModel = {
     Id : 0,
     Name : "",
@@ -50,7 +50,7 @@ export class VehiclemodelsComponent implements OnInit {
   }
 
   getVehicleMakes(): void {
-    this.vehiclemakeService.getVehicleMakesNotPaged().subscribe(pagedvehiclemake => this.pagedvehiclemake = pagedvehiclemake);
+    this.vehiclemakeService.getVehicleMakes(0, 0, "", "", "").subscribe(pagedvehiclemake => this.pagedvehiclemake = pagedvehiclemake);
   }
 
   getVehicleModels(): void {
@@ -73,17 +73,11 @@ export class VehiclemodelsComponent implements OnInit {
     });
   }
   previousPage(): void {
-    this.page = this.page - 1;
-    if(this.page == 0){
-      this.page = this.pagedvehiclemodel.TotalNumberOfPages;
-    }
+    this.pagging.previousPage(this.page, this.pagedvehiclemodel.TotalNumberOfPages)
     this.getVehicleModels();
   }
   nextPage(): void{
-    this.page = this.page + 1;
-    if(this.page > this.pagedvehiclemodel.TotalNumberOfPages){
-      this.page = 1;
-    }
+    this.pagging.nextPage(this.page, this.pagedvehiclemodel.TotalNumberOfPages)
     this.getVehicleModels();
   }
 }

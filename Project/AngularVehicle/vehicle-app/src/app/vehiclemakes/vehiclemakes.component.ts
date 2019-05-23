@@ -2,6 +2,7 @@ import { Component, OnInit, ɵCodegenComponentFactoryResolver } from '@angular/c
 import { PagedVehicleMake } from '../pagedvehiclemake';
 import { VehicleMake } from '../vehiclemake';
 import { VehicleMakeService } from '../vehiclemake.service';
+import {Pagging} from "../pagging.component"
 
 @Component({
   selector: 'app-vehiclemakes',
@@ -10,13 +11,12 @@ import { VehicleMakeService } from '../vehiclemake.service';
 })
 export class VehiclemakesComponent implements OnInit {
 
-  constructor(private vehiclemakeService : VehicleMakeService) { }
-  test : string;
+  constructor(private vehiclemakeService : VehicleMakeService, private pagging : Pagging) { }
   page : number;
+  pagesize : number;
   search : string;
   orderby : string;
   orderbydirection : string;
-  pagging : boolean;
   vehiclemake : VehicleMake = {
     Id : 0,
     Name : "",
@@ -26,6 +26,7 @@ export class VehiclemakesComponent implements OnInit {
   pagedvehiclemake :PagedVehicleMake;
   ngOnInit() {
     this.page = 1;
+    this.pagesize = 5;
     this.search = "";
     this.orderby = "";
     this.orderbydirection ="";
@@ -38,11 +39,11 @@ export class VehiclemakesComponent implements OnInit {
 
   filterVehicleMakes() : void {
     this.page = 1;
-    this.vehiclemakeService.getVehicleMakes(this.page, this.search, this.orderby, this.orderbydirection).subscribe(pagedvehiclemake => this.pagedvehiclemake = pagedvehiclemake);
+    this.vehiclemakeService.getVehicleMakes(this.page, this.pagesize, this.search, this.orderby, this.orderbydirection).subscribe(pagedvehiclemake => this.pagedvehiclemake = pagedvehiclemake);
   }
 
   getVehicleMakes(): void {
-    this.vehiclemakeService.getVehicleMakes(this.page, this.search, this.orderby, this.orderbydirection).subscribe(pagedvehiclemake => this.pagedvehiclemake = pagedvehiclemake);
+    this.vehiclemakeService.getVehicleMakes(this.page, this.pagesize, this.search, this.orderby, this.orderbydirection).subscribe(pagedvehiclemake => this.pagedvehiclemake = pagedvehiclemake);
   }
 
   addVehicleMake(): void {
@@ -61,17 +62,11 @@ export class VehiclemakesComponent implements OnInit {
     });
   }
   previousPage(): void {
-    this.page = this.page - 1;
-    if(this.page == 0){
-      this.page = this.pagedvehiclemake.TotalNumberOfPages;
-    }
+    this.pagging.previousPage(this.page, this.pagedvehiclemake.TotalNumberOfPages)
     this.getVehicleMakes();
   }
   nextPage(): void{
-    this.page = this.page + 1;
-    if(this.page > this.pagedvehiclemake.TotalNumberOfPages){
-      this.page = 1;
-    }
+    this.pagging.nextPage(this.page, this.pagedvehiclemake.TotalNumberOfPages)
     this.getVehicleMakes();
   }
 }
