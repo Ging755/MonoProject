@@ -38,47 +38,40 @@ namespace ProjectMono.Repository
         //Sorts, filters and pages a list of VehicleMakes
         public async Task<IPagedResult<IVehicleMake>> GetVehicleMakesAsync(ISortParameters sortParameters, IFilterParameters filterParameters, IPageParameters pageParameters)
         {
-            IEnumerable<VehicleMakeEntity> vehicleMakeList;
-            PagedResult<IVehicleMake> IPagedVehicleMake = new PagedResult<IVehicleMake>();
+            IQueryable<VehicleMakeEntity> vehicleMakeList;
+            PagedResult<IVehicleMake> PagedVehicleMake = new PagedResult<IVehicleMake>();
             switch (sortParameters.Sort)
             {
                 case "Name":
                     if (!string.IsNullOrEmpty(filterParameters.Search))
                     {
-                        vehicleMakeList = Repository.GetVehiclesAsync().Where(x => x.Name.ToUpper().Contains(filterParameters.Search.ToUpper())).OrderBy(x => x.Name);
+                        vehicleMakeList = Repository.GetVehiclesAsync().Where(x => x.Name.ToUpper().Contains(filterParameters.Search.ToUpper())).OrderBy(x => x.Name).AsQueryable();
                     }
                     else
                     {
-                        vehicleMakeList = Repository.GetVehiclesAsync().OrderBy(x => x.Name);
+                        vehicleMakeList = Repository.GetVehiclesAsync().OrderBy(x => x.Name).AsQueryable();
                     }
                     break;
                 case "Abrv":
                     if (!string.IsNullOrEmpty(filterParameters.Search))
                     {
-                        vehicleMakeList = Repository.GetVehiclesAsync().Where(x => x.Abrv.ToUpper().Contains(filterParameters.Search.ToUpper())).OrderBy(x => x.Abrv);
+                        vehicleMakeList = Repository.GetVehiclesAsync().Where(x => x.Abrv.ToUpper().Contains(filterParameters.Search.ToUpper())).OrderBy(x => x.Abrv).AsQueryable();
                     }
                     else
                     {
-                        vehicleMakeList = Repository.GetVehiclesAsync().OrderBy(x => x.Abrv);
+                        vehicleMakeList = Repository.GetVehiclesAsync().OrderBy(x => x.Abrv).AsQueryable();
                     }
                     break;
                 default:
                     if (!string.IsNullOrEmpty(filterParameters.Search))
                     {
-                        vehicleMakeList = Repository.GetVehiclesAsync().Where(x => x.Name.ToUpper().Contains(filterParameters.Search.ToUpper())).OrderBy(x => x.Name);
+                        vehicleMakeList = Repository.GetVehiclesAsync().Where(x => x.Name.ToUpper().Contains(filterParameters.Search.ToUpper())).OrderBy(x => x.Name).AsQueryable();
                     }
                     else
                     {
-                        vehicleMakeList = Repository.GetVehiclesAsync().OrderBy(x => x.Id);
+                        vehicleMakeList = Repository.GetVehiclesAsync().OrderBy(x => x.Id).AsQueryable();
                     }
                     break;
-            }
-            if(sortParameters.SortDirection != null)
-            {
-                if (sortParameters.SortDirection.ToUpper() == "DESCENDING")
-                {
-                    vehicleMakeList.Reverse();
-                }
             }
             if(pageParameters.PageSize != 0)
             {
@@ -92,23 +85,31 @@ namespace ProjectMono.Repository
                     skipAmount = (pageParameters.PageSize * (pageParameters.Page - 1));
                 }
                 var totalNumberOfRecords = vehicleMakeList.Count();
-                vehicleMakeList = vehicleMakeList.Skip((int)skipAmount).Take(pageParameters.PageSize).ToList();
+                vehicleMakeList = vehicleMakeList.Skip((int)skipAmount).Take(pageParameters.PageSize).AsQueryable();
                 var mod = totalNumberOfRecords % pageParameters.PageSize;
                 var totalPageCount = (totalNumberOfRecords / pageParameters.PageSize) + (mod == 0 ? 0 : 1);
-                IPagedVehicleMake.PageNumber = (int)pageParameters.Page;
-                IPagedVehicleMake.PageSize = pageParameters.PageSize;
-                IPagedVehicleMake.TotalNumberOfPages = totalPageCount;
-                IPagedVehicleMake.Results = AutoMapper.Mapper.Map<IEnumerable<IVehicleMake>>(vehicleMakeList);
+                var Results = AutoMapper.Mapper.Map<IEnumerable<IVehicleMake>>(vehicleMakeList.ToList());
+                PagedVehicleMake.PageNumber = (int)pageParameters.Page;
+                PagedVehicleMake.PageSize = pageParameters.PageSize;
+                PagedVehicleMake.TotalNumberOfPages = totalPageCount;
+                if (sortParameters.SortDirection != null)
+                {
+                    if (sortParameters.SortDirection.ToUpper() == "DESCENDING")
+                    {
+                        Results = Results.Reverse();
+                    }
+                }
+                PagedVehicleMake.Results = Results;
             }
             else
             {
-                IPagedVehicleMake.PageNumber = 0;
-                IPagedVehicleMake.PageSize = 0;
-                IPagedVehicleMake.TotalNumberOfPages = 0;
-                IPagedVehicleMake.Results = AutoMapper.Mapper.Map<IEnumerable<IVehicleMake>>(vehicleMakeList);
+                PagedVehicleMake.PageNumber = 0;
+                PagedVehicleMake.PageSize = 0;
+                PagedVehicleMake.TotalNumberOfPages = 0;
+                PagedVehicleMake.Results = AutoMapper.Mapper.Map<IEnumerable<IVehicleMake>>(vehicleMakeList.ToList());
             }
 
-            return IPagedVehicleMake;
+            return PagedVehicleMake;
         }
 
         //Gets a single VehicleMake by Id

@@ -22,3 +22,15 @@ C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMo
 C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\obj\Debug\ProjectMono.Model.Common.csproj.CopyComplete
 C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\obj\Debug\ProjectMono.Model.Common.dll
 C:\Users\Ging\Desktop\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\obj\Debug\ProjectMono.Model.Common.pdb
+G:\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\bin\Debug\ProjectMono.Model.Common.dll
+G:\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\bin\Debug\ProjectMono.Model.Common.pdb
+G:\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\bin\Debug\ProjectMono.DAL.dll
+G:\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\bin\Debug\EntityFramework.dll
+G:\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\bin\Debug\ProjectMono.DAL.pdb
+G:\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\bin\Debug\ProjectMono.DAL.dll.config
+G:\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\bin\Debug\EntityFramework.xml
+G:\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\obj\Debug\ProjectMono.Model.Common.csprojAssemblyReference.cache
+G:\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\obj\Debug\ProjectMono.Model.Common.csproj.CoreCompileInputs.cache
+G:\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\obj\Debug\ProjectMono.Model.Common.csproj.CopyComplete
+G:\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\obj\Debug\ProjectMono.Model.Common.dll
+G:\ProjectMono all versions\V18\Project\ProjectMono\ProjectMono.Model.Common\obj\Debug\ProjectMono.Model.Common.pdb
