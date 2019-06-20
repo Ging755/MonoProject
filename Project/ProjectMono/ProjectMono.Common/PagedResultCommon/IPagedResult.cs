@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace ProjectMono.Common.PagedResultCommon
 {
+    /// <summary>
+    /// Interface containing PagedResult.
+    /// </summary>
+    /// <typeparam name="T">Type of generic.</typeparam>
     public interface IPagedResult<T> where T : class
     {
         /// <summary>
@@ -23,6 +27,9 @@ namespace ProjectMono.Common.PagedResultCommon
         /// </summary> 
         int TotalNumberOfPages { get; set; }
 
+        /// <summary> 
+        /// The records this page represents. 
+        /// </summary> 
         IEnumerable<T> Results { get; set; }
     }
 }

@@ -39,7 +39,7 @@ export class VehiclemakesComponent implements OnInit {
 
   filterVehicleMakes() : void {
     this.page = 1;
-    this.vehiclemakeService.getVehicleMakes(this.page, this.pagesize, this.search, this.orderby, this.orderbydirection).subscribe(pagedvehiclemake => this.pagedvehiclemake = pagedvehiclemake);
+    this.getVehicleMakes();
   }
 
   getVehicleMakes(): void {

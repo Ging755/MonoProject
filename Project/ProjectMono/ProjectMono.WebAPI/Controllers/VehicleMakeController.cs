@@ -24,14 +24,24 @@ namespace ProjectMono.WebAPI.Controllers
         {
             this.service = service;
         }
+
         [HttpGet]
-        // GET: api/VehicleMake
+        /// <summary>
+        /// Get method,
+        /// /api/VehicleMake/?page=&pagesize=5&search=&sort=&direction=
+        /// </summary>
+        /// <param name="page">Current page</param>
+        /// <param name="pagesize">Page size, if page size is not given it's set to 0</param>
+        /// <param name="search">Search</param>
+        /// <param name="sort">Sort by Name or Abrv</param>
+        /// <param name="direction">Sort direction it can be ascending or descending</param>
+        /// <returns>Returns a list of VehicleMakeVM</returns>
         public async Task<IHttpActionResult> Get(int? page,int? pagesize, string search, string sort, string direction)
         {
             var sortParameters = new SortParameters()
             {
                 Sort = sort,
-                SortDirection = direction
+                SortDirection = direction ?? "Descending"
             };
             var filterParameters = new FilterParameters()
             {
@@ -40,16 +50,25 @@ namespace ProjectMono.WebAPI.Controllers
             var pageParameters = new PageParameters()
             {
                 Page = page ?? 1,
-                //I set the page size to 0, because as you can see in VehicleMakeService when page size is set to 0 it skips pagging. Because in one case I need to get all of the
-                //vehicle makes. Example is in angular part when I need to get all VehicleMakes when I'm creating a new VehicleModel, it needs VehicleMakeId to be created. So a drop down menu with all Vehicle Makes can be created from which VehicleMakeId can be chosen from.
+                /*I set the page size to 0, because as you can see in VehicleMakeService when page size is set to 0 it skips pagging. 
+                 * Because in one case I need to get all of thevehicle makes. 
+                 * Example is in angular part when I need to get all VehicleMakes when I'm creating a new VehicleModel, 
+                 * it needs VehicleMakeId to be created. 
+                 * So a drop down menu with all Vehicle Makes can be created from which VehicleMakeId can be chosen from.
+                */
                 PageSize = pagesize ?? 0
             };
             var vehicleMakeListPaged = AutoMapper.Mapper.Map<IPagedResult<VehicleMakeVM>>(await service.GetVehicleMakesAsync(sortParameters, filterParameters, pageParameters));
             return Ok(vehicleMakeListPaged);
         }
 
+        /// <summary>
+        /// Get method,
+        /// api/VehicleMake/5
+        /// </summary>
+        /// <param name="id">VehicleMake Id</param>
+        /// <returns>Returns a single VehicleMakeVM</returns>
         [HttpGet]
-        // GET: api/VehicleMake/5
         public async Task<IHttpActionResult> Get(int? id)
         {
             if (id == null)
@@ -67,8 +86,12 @@ namespace ProjectMono.WebAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Post method,
+        /// api/VehicleMake
+        /// </summary>
+        /// <param name="VM">View Model, type of VehicleMakeVM</param>
         [HttpPost]
-        // POST: api/VehicleMake
         public async Task<IHttpActionResult> Post([FromBody]VehicleMakeVM VM)
         {
             try
@@ -83,8 +106,13 @@ namespace ProjectMono.WebAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Put method,
+        /// api/VehicleMake/5
+        /// </summary>
+        /// <param name="id">VehicleMake Id, type of int</param>
+        /// <param name="VM">View Model, type of VehicleMakeVM</param>
         [HttpPut]
-        // PUT: api/VehicleMake/5
         public async Task<IHttpActionResult> Put(int? id, [FromBody]VehicleMakeVM VM)
         {
             try
@@ -107,8 +135,12 @@ namespace ProjectMono.WebAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete method,
+        /// api/VehicleMake/5
+        /// </summary>
+        /// <param name="id">VehicleMake Id, type of int</param>
         [HttpDelete]
-        // DELETE: api/VehicleMake/5
         public async Task<IHttpActionResult> Delete(int? id)
         {
             try
@@ -122,7 +154,7 @@ namespace ProjectMono.WebAPI.Controllers
                     var success = await service.DeleteVehicleMakeAsync((int)id);
                     if (!success)
                     {
-                        return BadRequest();
+                        return NotFound();
                     }
                     return Ok();
                 }

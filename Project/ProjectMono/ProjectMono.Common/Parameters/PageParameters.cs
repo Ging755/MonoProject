@@ -7,12 +7,19 @@ using System.Threading.Tasks;
 
 namespace ProjectMono.Common.Parameters
 {
-    //Class containing page parameters
+    /// <summary>
+    /// Class containing page parameters.
+    /// </summary>
     public class PageParameters : IPageParameters
     {
-        //Current Page
+        /// <summary>
+        /// Current page.
+        /// </summary>
         public int? Page { get; set; }
-        //Ammount of Models per a page
+
+        /// <summary>
+        /// Ammount of models per page.
+        /// </summary>
         public int PageSize { get; set; }
     }
 }

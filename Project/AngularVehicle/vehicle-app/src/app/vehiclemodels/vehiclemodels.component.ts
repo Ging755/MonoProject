@@ -20,7 +20,7 @@ export class VehiclemodelsComponent implements OnInit {
   search : string;
   orderby : string;
   orderbydirection : string;
-  orderbymakeid : number;
+  filterbymake : number;
   vehiclemodel : VehicleModel = {
     Id : 0,
     Name : "",
@@ -35,9 +35,9 @@ export class VehiclemodelsComponent implements OnInit {
     this.search = "";
     this.orderby = "";
     this.orderbydirection ="";
-    this.orderbymakeid = 0;
-    this.getVehicleModels();
+    this.filterbymake = null;
     this.getVehicleMakes();
+    this.getVehicleModels();
   }
 
   onSelect(Id : number): void{
@@ -46,7 +46,7 @@ export class VehiclemodelsComponent implements OnInit {
 
   filterVehicleModels() : void {
     this.page = 1;
-    this.vehiclemodelService.getVehicleModels(this.page, this.search, this.orderby, this.orderbydirection, this.orderbymakeid).subscribe(pagedvehiclemodel => this.pagedvehiclemodel = pagedvehiclemodel);
+    this.getVehicleModels();
   }
 
   getVehicleMakes(): void {
@@ -54,7 +54,7 @@ export class VehiclemodelsComponent implements OnInit {
   }
 
   getVehicleModels(): void {
-    this.vehiclemodelService.getVehicleModels(this.page, this.search, this.orderby, this.orderbydirection, this.orderbymakeid).subscribe(pagedvehiclemodel => this.pagedvehiclemodel = pagedvehiclemodel);
+    this.vehiclemodelService.getVehicleModels(this.page, this.search, this.orderby, this.orderbydirection, this.filterbymake).subscribe(pagedvehiclemodel => this.pagedvehiclemodel = pagedvehiclemodel);
   }
 
   addVehicleModel(): void {

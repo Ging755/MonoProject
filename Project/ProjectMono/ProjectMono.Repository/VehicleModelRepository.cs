@@ -14,6 +14,9 @@ using System.Threading.Tasks;
 
 namespace ProjectMono.Repository
 {
+    /// <summary>
+    /// VehicleModelRepository class.
+    /// </summary>
     public class VehicleModelRepository : IVehicleModelRepository
     {
         protected IGenericRepository<VehicleModelEntity> Repository;
@@ -22,86 +25,81 @@ namespace ProjectMono.Repository
             Repository = repository;
         }
 
-        //Create
+        /// <summary>
+        /// Create method,
+        /// creates a new VehicleModel using Generic Repository.
+        /// </summary>
+        /// <param name="entity">Model, type of IVehicleModel.</param>
         public async Task AddVehicleModelAsync(IVehicleModel entity)
         {
            await Repository.AddAsync(AutoMapper.Mapper.Map<VehicleModelEntity>(entity));
         }
 
-        //Delete
-
+        /// <summary>
+        /// Delete method,
+        /// deletes a VehicleModel using Generic Repository.
+        /// </summary>
+        /// <param name="entity">Model, type of IVehicleModel.</param>
         public async Task DeleteVehicleModelAsync(IVehicleModel entity)
         {
             await Repository.DeleteAsync(AutoMapper.Mapper.Map<VehicleModelEntity>(entity));
         }
 
 
-        //Read
+        /// <summary>
+        /// Read method,
+        /// gets VehicleModel from Generic Repository.
+        /// </summary>
+        /// <param name="id">Id, type of int.</param>
+        /// <returns>Returns a single IVehicleModel.</returns>
         public async Task<IVehicleModel> GetVehicleModelAsync(int id)
         {
             return AutoMapper.Mapper.Map<IVehicleModel>(await Repository.GetVehicleAsync(id)); 
         }
 
-        public async Task<IPagedResult<IVehicleModel>> GetVehicleModelsAsync(ISortParameters sortParameters, IFilterParameters filterParameters, IPageParameters pageParameters, int? makeId)
+        /// <summary>
+        /// Read method,
+        /// gets a list of VehicleModels from Generic Repository,
+        /// does sorting, filtering and pagging.
+        /// </summary>
+        /// <param name="sortParameters">Has 2 properties: Sort and Sort Direction.</param>
+        /// <param name="filterParameters">Has 2 properties: Search and MakeId.</param>
+        /// <param name="pageParameters">Has 2 properties: Page and PageSize.</param>
+        /// <returns>Retuns a list of paged, sorted and filtered IVehicleModel.</returns>
+        public async Task<IPagedResult<IVehicleModel>> GetVehicleModelsAsync(ISortParameters sortParameters, IFilterParameters filterParameters, IPageParameters pageParameters)
         {
             IQueryable<VehicleModelEntity> vehicleModelList;
             PagedResult<IVehicleModel> PagedVehicleModel = new PagedResult<IVehicleModel>();
-            switch (sortParameters.Sort)
+            if (!string.IsNullOrEmpty(filterParameters.Search))
             {
-                case "Name":
-                    if (!string.IsNullOrEmpty(filterParameters.Search) && makeId != 0)
-                    {
-                        vehicleModelList = Repository.GetVehiclesAsync().Where(x => x.Name.ToUpper().Contains(filterParameters.Search) && x.VehicleMakeEntityId == makeId).OrderBy(x => x.Name).AsQueryable();
-                    }
-                    else if (!string.IsNullOrEmpty(filterParameters.Search))
-                    {
-                        vehicleModelList = Repository.GetVehiclesAsync().Where(x => x.Name.ToUpper().Contains(filterParameters.Search.ToUpper())).OrderBy(x => x.Name).AsQueryable();
-                    }
-                    else if (makeId != 0)
-                    {
-                        vehicleModelList = Repository.GetVehiclesAsync().Where(x => x.VehicleMakeEntityId == makeId).OrderBy(x => x.Name).AsQueryable(); 
-                    }
-                    else
-                    {
-                        vehicleModelList = Repository.GetVehiclesAsync().OrderBy(x => x.Name);
-                    }
-                    break;
-                case "Abrv":
-                    if (!string.IsNullOrEmpty(filterParameters.Search) && makeId != 0)
-                    {
-                        vehicleModelList = Repository.GetVehiclesAsync().Where(x => x.Abrv.ToUpper().Contains(filterParameters.Search) && x.VehicleMakeEntityId == makeId).OrderBy(x => x.Abrv).AsQueryable();
-                    }
-                    else if (!string.IsNullOrEmpty(filterParameters.Search))
-                    {
-                        vehicleModelList = Repository.GetVehiclesAsync().Where(x => x.Abrv.ToUpper().Contains(filterParameters.Search.ToUpper())).OrderBy(x => x.Abrv).AsQueryable();
-                    }
-                    else if (makeId != 0)
-                    {
-                        vehicleModelList = Repository.GetVehiclesAsync().Where(x => x.VehicleMakeEntityId == makeId).OrderBy(x => x.Abrv).AsQueryable();
-                    }
-                    else
-                    {
-                        vehicleModelList = Repository.GetVehiclesAsync().OrderBy(x => x.Abrv).AsQueryable();
-                    }
-                    break;
-                default:
-                    if (!string.IsNullOrEmpty(filterParameters.Search) && makeId != 0)
-                    {
-                        vehicleModelList = Repository.GetVehiclesAsync().Where(x => x.Name.ToUpper().Contains(filterParameters.Search) && x.VehicleMakeEntityId == makeId).OrderBy(x => x.Id).AsQueryable();
-                    }
-                    else if (!string.IsNullOrEmpty(filterParameters.Search))
-                    {
-                        vehicleModelList = Repository.GetVehiclesAsync().Where(x => x.Name.ToUpper().Contains(filterParameters.Search.ToUpper())).OrderBy(x => x.Id).AsQueryable();
-                    }
-                    else if (makeId != 0)
-                    {
-                        vehicleModelList = Repository.GetVehiclesAsync().Where(x => x.VehicleMakeEntityId == makeId).OrderBy(x => x.Id).AsQueryable();
-                    }
-                    else
-                    {
-                        vehicleModelList = Repository.GetVehiclesAsync().OrderBy(x => x.Id).AsQueryable();
-                    }
-                    break;
+                vehicleModelList = Repository.GetVehiclesAsync().Where(x => x.Abrv.ToUpper() == filterParameters.Search.ToUpper() || x.Name.ToUpper().Contains(filterParameters.Search.ToUpper())).OrderBy(x => x.Id).AsQueryable();
+            }
+            else
+            {
+                vehicleModelList = Repository.GetVehiclesAsync().OrderBy(x => x.Id);
+            }
+            if(filterParameters.VehicleMakeId != null)
+            {
+                vehicleModelList = vehicleModelList.Where(x => x.VehicleMakeEntityId == filterParameters.VehicleMakeId);
+            }
+            if (!string.IsNullOrEmpty(sortParameters.Sort))
+            {
+                if (sortParameters.Sort.ToUpper() == "NAME")
+                {
+                    vehicleModelList = vehicleModelList.OrderBy(x => x.Name).AsQueryable();
+                }
+                else if (sortParameters.Sort.ToUpper() == "ABRV")
+                {
+                    vehicleModelList = vehicleModelList.OrderBy(x => x.Abrv).AsQueryable();
+                }
+            }
+            else
+            {
+                vehicleModelList = vehicleModelList.OrderBy(x => x.Id).AsQueryable();
+            }
+            if (sortParameters.SortDirection.ToUpper() == "DESCENDING")
+            {
+                vehicleModelList.Reverse();
             }
             if(pageParameters.PageSize != 0)
             {
@@ -141,7 +139,11 @@ namespace ProjectMono.Repository
             return PagedVehicleModel;
         }
 
-        //Update
+        /// <summary>
+        /// Update method,
+        /// updates/edits VehicleModel using Generic Repository.
+        /// </summary>
+        /// <param name="entity">Model, type of IVehicleModel.</param>
         public async Task UpdateVehicleModelAsync(IVehicleModel entity)
         {
             await Repository.EditAsync(AutoMapper.Mapper.Map<VehicleModelEntity>(entity));

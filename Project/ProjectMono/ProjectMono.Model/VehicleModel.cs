@@ -8,14 +8,25 @@ using System.Threading.Tasks;
 
 namespace ProjectMono.Model
 {
+    /// <summary>
+    /// VehicleModel model class.
+    /// </summary>
     public class VehicleModel : IVehicleModel
     {
         public int Id { get; set; }
-        //VehicleModel name
+
+        /// <summary>
+        /// VehicleModel name.
+        /// </summary>
         public string Name { get; set; }
-        //VehicleModel Abbreviation
+        /// <summary>
+        /// VehicleModel abbreviation.
+        /// </summary>
         public string Abrv { get; set; }
-        //VehicleModel's Make Id
+
+        /// <summary>
+        /// VehicleModel's Make Id.
+        /// </summary>
         public int MakeId { get; set; }
     }
 }

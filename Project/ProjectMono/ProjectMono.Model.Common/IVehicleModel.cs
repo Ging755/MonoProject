@@ -7,15 +7,26 @@ using System.Threading.Tasks;
 
 namespace ProjectMono.Model.Common
 {
-    //Interface for VehicleModel
+    /// <summary>
+    /// VehicleModel interface.
+    /// </summary>
     public interface IVehicleModel
     {
         int Id { get; set; }
-        //VehicleModel name
+
+        /// <summary>
+        /// VehicleModel name.
+        /// </summary>
         string Name { get; set; }
-        //VehicleModel abbreviation
+
+        /// <summary>
+        /// VehicleModel abbreviation.
+        /// </summary>
         string Abrv { get; set; }
-        //VehicleModel's make Id
+
+        /// <summary>
+        /// VehicleModel's make Id.
+        /// </summary>
         int MakeId { get; set; }
     }
 }

@@ -12,7 +12,12 @@ namespace ProjectMono.Common
 {
     public class AutoMapperProfile : Profile
     {
-        //Auto Mapper Profile
+        /// <summary>
+        /// AutoMapperProfile
+        /// Maps VehicleModelEntity's VehicleMakeEntityId to IVehicleModel's MakeId,
+        /// maps VehicleModelEntity's VehicleMakeEntityId to VehicleModel's MakeId,
+        /// everything else is mapped automatically since they are named the same.
+        /// </summary>
         public AutoMapperProfile()
         {
             CreateMap<VehicleMakeEntity, VehicleMake>().ReverseMap();

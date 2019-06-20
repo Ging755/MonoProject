@@ -6,12 +6,19 @@ using System.Threading.Tasks;
 
 namespace ProjectMono.Common.ParametersCommon
 {
-    //Interface for sort parameters
+    /// <summary>
+    /// Interface containing sort parameters.
+    /// </summary>
     public interface ISortParameters
     {
-        //Sort parameter
+        /// <summary>
+        /// Sort parameter can be Name and/or Abrv.
+        /// </summary>
         string Sort { get; set; }
-        //Sort Direction it can be ascending and descending
+
+        /// <summary>
+        /// Sort direction parameter can be Ascending and Descending.
+        /// </summary>
         string SortDirection { get; set; }
     }
 }

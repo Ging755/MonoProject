@@ -7,12 +7,19 @@ using System.Threading.Tasks;
 
 namespace ProjectMono.Common.Parameters
 {
-    //Class cotaining sort parameters
+    /// <summary>
+    /// Class containing sort parameters.
+    /// </summary>
     public class SortParameters : ISortParameters
     {
-        //Sort parameter
+        /// <summary>
+        /// Sort parameter can be Name and/or Abrv.
+        /// </summary>
         public string Sort { get; set; }
-        //Sort Direction it can be ascending and descending
+
+        /// <summary>
+        /// Sort direction parameter can be Ascending and Descending.
+        /// </summary>
         public string SortDirection { get; set; }
     }
 }

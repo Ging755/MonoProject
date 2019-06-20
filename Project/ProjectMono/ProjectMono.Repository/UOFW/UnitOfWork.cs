@@ -11,6 +11,9 @@ using System.Transactions;
 
 namespace ProjectMono.Repository.UOFW
 {
+    /// <summary>
+    /// UnitOfWork Class.
+    /// </summary>
     public class UnitOfWork : IUnitOfWOrk
     {
         protected NewContext DbContext { get; private set; }
@@ -22,6 +25,12 @@ namespace ProjectMono.Repository.UOFW
             }
             DbContext = dbContext;
         }
+
+        /// <summary>
+        /// Create method,
+        /// creates/adds to context.
+        /// </summary>
+        /// <typeparam name="T">Model, type of generic.</typeparam>
         public Task<int> AddAsync<T>(T entity) where T : class
         {
             DbEntityEntry dbEntityEntry = DbContext.Entry(entity);
@@ -36,6 +45,10 @@ namespace ProjectMono.Repository.UOFW
             return Task.FromResult(1);
         }
 
+        /// <summary>
+        /// Commit method,
+        /// saves changes to context.
+        /// </summary>
         public async Task<int> CommitAsync()
         {
             int result = 0;
@@ -47,6 +60,12 @@ namespace ProjectMono.Repository.UOFW
             return result;
         }
 
+        /// <summary>
+        /// Delete method,
+        /// deletes from context.
+        /// </summary>
+        /// <typeparam name="T">Model, type of generic.</typeparam>
+        /// <param name="entity"></param>
         public Task<int> DeleteAsync<T>(T entity) where T : class
         {
             DbEntityEntry dbEntityEntry = DbContext.Entry(entity);
@@ -62,6 +81,11 @@ namespace ProjectMono.Repository.UOFW
             return Task.FromResult(1);
         }
 
+        /// <summary>
+        /// Delete method,
+        /// deletes from context.
+        /// </summary>
+        /// <typeparam name="T">Id, type of string.</typeparam>
         public Task<int> DeleteAsync<T>(string Id) where T : class
         {
             var entity = DbContext.Set<T>().Find(Id);
@@ -72,6 +96,11 @@ namespace ProjectMono.Repository.UOFW
             return DeleteAsync<T>(entity);
         }
 
+        /// <summary>
+        /// Update method,
+        /// updates/edits from context.
+        /// </summary>
+        /// <typeparam name="T">Model, type of generic</typeparam>
         public Task<int> UpdateAsync<T>(T entity) where T : class
         {
             DbEntityEntry dbEntityEntry = DbContext.Entry(entity);

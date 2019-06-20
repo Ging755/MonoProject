@@ -7,13 +7,21 @@ using System.Threading.Tasks;
 
 namespace ProjectMono.Model
 {
-    //VehicleMake class
+    /// <summary>
+    /// VehicleMake model class.
+    /// </summary>
     public class VehicleMake : IVehicleMake
     {
         public int Id { get; set; }
-        //VehicleMake name
+
+        /// <summary>
+        /// VehicleMake name.
+        /// </summary>
         public string Name { get; set; }
-        //VehicleMake abbreviation
+
+        /// <summary>
+        /// VehicleMake abbreviation.
+        /// </summary>
         public string Abrv { get; set; }
     }
 }

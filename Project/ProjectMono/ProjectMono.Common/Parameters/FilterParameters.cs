@@ -7,10 +7,19 @@ using System.Threading.Tasks;
 
 namespace ProjectMono.Common.Parameters
 {
-    //Class containing filter parameters
+    /// <summary>
+    /// Class containing filter parameters.
+    /// </summary>
     public class FilterParameters : IFilterParameters
     {
-        //Search parameter
+        /// <summary>
+        /// The search parameter used to search or filter by name.
+        /// </summary>
         public string Search { get; set; }
+        
+        /// <summary>
+        /// The vehiclemakeid parameter used to filter by make.
+        /// </summary>
+        public int? VehicleMakeId { get; set; }
     }
 }

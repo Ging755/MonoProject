@@ -27,34 +27,46 @@ namespace ProjectMono.WebAPI.Controllers
         {
             this.service = service;
         }
+
+        /// <summary>
+        /// Get method,
+        /// /api/VehicleModel/?page=&pagesize=5&search=&sort=&direction=&makeid=
+        /// </summary>
+        /// <param name="page">Current page</param>
+        /// <param name="pagesize">Page size, if page size is not given it's set to 0</param>
+        /// <param name="search">Search</param>
+        /// <param name="sort">Sort by Name or Abrv</param>
+        /// <param name="direction">Sort direction it can be ascending or descending</param>
+        /// <returns>Returns a list of VehicleModelVM</returns>
         [HttpGet]
-        // GET: api/VehicleModel
-        public async Task<IHttpActionResult> Get(int? page, int? pagesize, string search, string sort, string direction, int? makeId)
+        public async Task<IHttpActionResult> Get(int? page, int? pagesize, string search, string sort, string direction, int? makeid)
         {
             var sortParameters = new SortParameters()
             {
                 Sort = sort,
-                SortDirection = direction
+                SortDirection = direction ?? "Descending"
             };
             var filterParameters = new FilterParameters()
             {
-                Search = search
+                Search = search,
+                VehicleMakeId = makeid
             };
             var pageParameters = new PageParameters()
             {
                 Page = page ?? 1,
                 PageSize = pagesize ?? 5
             };
-            if(makeId == null)
-            {
-                makeId = 0;
-            }
-            var vehicleModelListPaged = AutoMapper.Mapper.Map<IPagedResult<VehicleModelVM>>(await service.GetVehicleModelsAsync(sortParameters, filterParameters, pageParameters, makeId));
+            var vehicleModelListPaged = AutoMapper.Mapper.Map<IPagedResult<VehicleModelVM>>(await service.GetVehicleModelsAsync(sortParameters, filterParameters, pageParameters));
             return Ok(vehicleModelListPaged);
         }
 
+        /// <summary>
+        /// Get method,
+        /// api/VehicleModel/5
+        /// </summary>
+        /// <param name="id">VehicleModel Id</param>
+        /// <returns>Returns a single VehicleModelVM</returns>
         [HttpGet]
-        // GET: api/VehicleModel/5
         public async Task<IHttpActionResult> Get(int? id)
         {
             if (id == null)
@@ -73,7 +85,11 @@ namespace ProjectMono.WebAPI.Controllers
         }
 
         [HttpPost]
-        // POST: api/VehicleModel
+        /// <summary>
+        /// Post method,
+        /// api/VehicleModel
+        /// </summary>
+        /// <param name="VM">View Model, type of VehicleModelVM</param>
         public async Task<IHttpActionResult> Post([FromBody]VehicleModelVM VM)
         {
             try
@@ -88,8 +104,13 @@ namespace ProjectMono.WebAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Put method,
+        /// api/VehicleModel/5
+        /// </summary>
+        /// <param name="id">VehicleModel Id, type of int</param>
+        /// <param name="VM">View Model, type of VehicleModelVM</param>
         [HttpPut]
-        // PUT: api/VehicleModel/5
         public async Task<IHttpActionResult> Put(int? id, [FromBody]VehicleModelVM VM)
         {
             try
@@ -112,8 +133,12 @@ namespace ProjectMono.WebAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete method,
+        /// api/VehicleModel/5
+        /// </summary>
+        /// <param name="id">VehicleModel Id, type of int</param>
         [HttpDelete]
-        // DELETE: api/VehicleModel/5
         public async Task<IHttpActionResult> Delete(int? id)
         {
             try
@@ -127,7 +152,7 @@ namespace ProjectMono.WebAPI.Controllers
                     var success = await service.DeleteVehicleModelAsync((int) id);
                     if (!success)
                     {
-                        return BadRequest();
+                        return NotFound();
                     }
                     return Ok();
                 }

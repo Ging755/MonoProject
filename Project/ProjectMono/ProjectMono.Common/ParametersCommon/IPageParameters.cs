@@ -6,12 +6,19 @@ using System.Threading.Tasks;
 
 namespace ProjectMono.Common.ParametersCommon
 {
-    //Interface for page parameters
+    /// <summary>
+    /// Interface containing page parameters.
+    /// </summary>
     public interface IPageParameters
     {
-        //Current Page
+        /// <summary>
+        /// Current page.
+        /// </summary>
         int? Page { get; set; }
-        //Ammount of Models per a page
+
+        /// <summary>
+        /// Ammount of models per page.
+        /// </summary>
         int PageSize { get; set; }
     }
 }

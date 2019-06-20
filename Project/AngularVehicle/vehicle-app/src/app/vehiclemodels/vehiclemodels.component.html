@@ -23,13 +23,13 @@
               </option>
           </select>
       </label>
-          <label>Vehicle Makes: </label>
-          <select [(ngModel)]="orderbymakeid" (change)="filterVehicleModels()">
-              <option value="0">--All--</option>
-              <option *ngFor="let vehiclemake of pagedvehiclemake.Results" value={{vehiclemake.Id}}>
-                  {{vehiclemake.Name}}
-              </option>
-          </select>
+    <label>Filter by makes: </label>
+    <select [(ngModel)]="filterbymake" (change)="filterVehicleModels()">
+    <option value="">--All--</option>
+    <option *ngFor="let vehiclemake of pagedvehiclemake.Results" value={{vehiclemake.Id}}>
+        {{vehiclemake.Name}}
+    </option>
+    </select>
 </div>
 <div>
 <h3>Create New Model here:</h3>
@@ -41,7 +41,7 @@
 </label>
 <label>Vehicle Makes: </label>
 <select [(ngModel)]="vehiclemodel.MakeId">
-    <option value="0">--All--</option>
+    <option value="">--All--</option>
     <option *ngFor="let vehiclemake of pagedvehiclemake.Results" value={{vehiclemake.Id}}>
         {{vehiclemake.Name}}
     </option>

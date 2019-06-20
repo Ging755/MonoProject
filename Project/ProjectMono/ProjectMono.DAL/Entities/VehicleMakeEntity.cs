@@ -7,15 +7,26 @@ using System.Threading.Tasks;
 
 namespace ProjectMono.DAL.Entities
 {
+    /// <summary>
+    /// VehicleMake entity.
+    /// </summary>
     public class VehicleMakeEntity
     {
         [Key]
         public int Id { get; set; }
-        //Name of VehicleMakeEntity
+        /// <summary>
+        /// Name of VehicleMakeEntity.
+        /// </summary>
         public string Name { get; set; }
-        //Abbreviation of VehicleMakeEntity
+
+        /// <summary>
+        /// Abbreviation of VehicleMakeEntity.
+        /// </summary>
         public string Abrv { get; set; }
-        //List of VehicleModelsEntity
+
+        /// <summary>
+        /// One to Many connection with VehicleModelEntity.
+        /// </summary>
         public virtual ICollection<VehicleModelEntity> VehicleModels { get; set; }
 
         public VehicleMakeEntity()

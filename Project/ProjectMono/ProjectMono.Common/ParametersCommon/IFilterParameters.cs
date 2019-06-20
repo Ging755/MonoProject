@@ -6,10 +6,19 @@ using System.Threading.Tasks;
 
 namespace ProjectMono.Common.ParametersCommon
 {
-    //Interface for filter parameters
+    /// <summary>
+    /// Interface containing filter parameters.
+    /// </summary>
     public interface IFilterParameters
     {
-        //Search parameter
+        /// <summary>
+        /// The search parameter used to search or filter by name.
+        /// </summary>
         string Search { get; set; }
+
+        /// <summary>
+        /// The vehiclemakeid parameter used to filter by make.
+        /// </summary>
+        int? VehicleMakeId { get; set; }
     }
 }

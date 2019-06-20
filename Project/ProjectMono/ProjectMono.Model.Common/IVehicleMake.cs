@@ -6,13 +6,21 @@ using System.Threading.Tasks;
 
 namespace ProjectMono.Model.Common
 {
-    //Interface for VehicleMake
+    /// <summary>
+    /// VehicleMake interface.
+    /// </summary>
     public interface IVehicleMake
     {
         int Id { get; set; }
-        //VehicleMake name
+
+        /// <summary>
+        /// VehicleMake name.
+        /// </summary>
         string Name { get; set; }
-        //VehicleMake Abbreviation
+
+        /// <summary>
+        /// VehicleMake abbreviation.
+        /// </summary>
         string Abrv { get; set; }
     }
 }

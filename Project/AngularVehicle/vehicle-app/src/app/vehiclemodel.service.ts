@@ -27,8 +27,8 @@ export class VehicleModelService {
         );
       }
     /**GET vehiclemodels from the server */
-    getVehicleModels(page : number, search : string, sort : string, direction : string, makeId : number) : Observable<PagedVehicleModel>{
-      return this.http.get<PagedVehicleModel>(WebAPIURLs.VehicleModelUrl + "/?page=" + page + "&pagesize="+ "&search=" + search + "&sort=" + sort + "&direction=" + direction + "&makeId=" + makeId)
+    getVehicleModels(page : number, search : string, sort : string, direction : string, makeid : number) : Observable<PagedVehicleModel>{
+      return this.http.get<PagedVehicleModel>(WebAPIURLs.VehicleModelUrl + "/?page=" + page + "&pagesize="+ "&search=" + search + "&sort=" + sort + "&direction=" + direction + "&makeid=" + makeid)
       .pipe(
         tap(_ => this.log('fetched vehiclemodels')),
         catchError(this.handleError<PagedVehicleModel>('getVehicleModels', ))

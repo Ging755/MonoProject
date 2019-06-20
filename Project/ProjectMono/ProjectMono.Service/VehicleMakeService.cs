@@ -13,6 +13,9 @@ using System.Threading.Tasks;
 
 namespace ProjectMono.Service
 {
+    /// <summary>
+    /// VehicleMakeService class.
+    /// </summary>
     public class VehicleMakeService : IVehicleMakeService
     {
         protected IVehicleMakeRepository repository;
@@ -21,13 +24,22 @@ namespace ProjectMono.Service
             this.repository = repository;
         }
 
-        //Create
+        /// <summary>
+        /// Create method,
+        /// creates VehicleMake using VehicleMake Repository.
+        /// </summary>
+        /// <param name="entity">Model, type of IVehicleMake.</param>
         public async Task AddVehicleMakeAsync(IVehicleMake entity)
         {
             await repository.AddVehicleMakeAsync(entity);
         }
 
-        //Delete
+        /// <summary>
+        /// Delete method,
+        /// deletes VehicleMake using VehicleMake Repository.
+        /// </summary>
+        /// <param name="Id">VehicleMake Id, type of int.</param>
+        /// <returns>Returns boolean to controller, so controller knows if VehicleMake was deleted or not.</returns>
         public async Task<Boolean> DeleteVehicleMakeAsync(int Id)
         {
             var entity = await repository.GetVehicleMakeAsync((int)Id);
@@ -42,20 +54,37 @@ namespace ProjectMono.Service
             }
         }
 
-        //Read
-        //Gets a single VehicleMake by id from repository
+        /// <summary>
+        /// Read method,
+        /// gets a single VehicleMake from repository.
+        /// </summary>
+        /// <param name="id">VehicleMake Id, type of int.</param>
+        /// <returns>Returns a single IVehicleMake.</returns>
         public async Task<IVehicleMake> GetVehicleMakeAsync(int id)
         {
             return await repository.GetVehicleMakeAsync(id);
         }
 
-        //Gets sorted, filtered and paged list of VehicleMakes from repository
+        /// <summary>
+        /// Read method,
+        /// gets list of VehicleMakes from VehicleMake Repository,
+        /// does sorting, filtering and pagging.
+        /// </summary>
+        /// <param name="sortParameters">>Has 2 properties: Sort and Sort Direction.</param>
+        /// <param name="filterParameters">Has 2 properties: Search and MakeId.</param>
+        /// <param name="pageParameters">Has 2 properties: Page and PageSize.</param>
+        /// <returns>Returns a list of paged, sorted and filtered IVehicleMake.</returns>
         public async Task<IPagedResult<IVehicleMake>> GetVehicleMakesAsync(ISortParameters sortParameters, IFilterParameters filterParameters, IPageParameters pageParameters)
         {
             return await repository.GetVehicleMakesAsync(sortParameters, filterParameters, pageParameters);
         }
 
-        //Update
+        /// <summary>
+        /// Update method,
+        /// updates/edits VehicleMake.
+        /// </summary>
+        /// <param name="entity">Model, type of IVehicleMake.</param>
+        /// <returns>Returns boolean to controller, so controller knows if VeickeMake was update or not.</returns>
         public async Task<Boolean> UpdateVehicleMakeAsync(IVehicleMake entity)
         {
             if (repository.GetVehicleMakeAsync(entity.Id) != null)

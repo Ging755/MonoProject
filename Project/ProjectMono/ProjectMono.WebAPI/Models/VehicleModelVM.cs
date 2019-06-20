@@ -7,6 +7,9 @@ using System.Web;
 
 namespace ProjectMono.WebAPI.Models
 {
+    /// <summary>
+    /// VehicleModel View Model Class
+    /// </summary>
     public class VehicleModelVM
     {
         public int Id { get; set; }
