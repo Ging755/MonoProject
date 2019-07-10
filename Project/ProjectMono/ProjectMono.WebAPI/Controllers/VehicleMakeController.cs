@@ -16,7 +16,6 @@ using System.Web.Http.Cors;
 
 namespace ProjectMono.WebAPI.Controllers
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class VehicleMakeController : ApiController
     {
         protected IVehicleMakeService service;
@@ -37,6 +36,7 @@ namespace ProjectMono.WebAPI.Controllers
         /// <param name="direction">Sort direction it can be ascending or descending</param>
         /// <returns>Returns a list of VehicleMakeVM</returns>
         public async Task<IHttpActionResult> Get(int? page,int? pagesize, string search, string sort, string direction)
+
         {
             var sortParameters = new SortParameters()
             {
