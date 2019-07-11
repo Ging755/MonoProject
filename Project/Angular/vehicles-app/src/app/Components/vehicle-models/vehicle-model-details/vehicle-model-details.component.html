@@ -1,0 +1,21 @@
+<div *ngIf="model">
+    <h2>{{model.Name | uppercase}} Details</h2>
+    <div><span>Id: </span>{{model.Id}}</div>
+    <div *ngIf="make"><span>Make :</span> {{make.Name}}</div>
+    <div>
+        <p>Current Name: {{model.Name}}</p>
+        <label>Name:
+            <input  type="text" placeholder="Name" [(ngModel)]="editedmodel.Name"/>
+        </label>
+    </div>
+    <div>
+        <p>Current Abrv: {{model.Abrv}}</p>
+        <label>Abrv
+            <input type="text" placeholder="Abrv" [(ngModel)]="editedmodel.Abrv"/>
+        </label>
+    </div>
+    <div>
+        <button type="submit" (click)="onEdit()">Edit</button>
+        <button type="button" (click)="onDelete()">Delete</button>
+    </div>
+</div>

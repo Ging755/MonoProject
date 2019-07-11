@@ -1,0 +1,21 @@
+<h2>Create New Vehicle Model Here</h2>
+<form [formGroup]="createForm" (ngSubmit)="onSubmit(createForm.value)">
+    <div>
+        <label>Name:
+            <input type="text" formControlName="name" placeholder="name" required/>
+        </label>
+    </div>
+    <div>
+        <label>Abrv:
+            <input type="text" formControlName="abrv" placeholder="abrv" required>
+        </label>
+    </div>
+    <div>Make Id:
+        <select *ngIf="makes" formControlName="makeId" required>
+            <option *ngFor="let make of makes.Results" value="{{make.Id}}">
+                {{make.Name}}
+            </option>
+        </select>
+    </div>
+    <button type="submit" [disabled]="createForm.invalid">Create New</button>
+</form>

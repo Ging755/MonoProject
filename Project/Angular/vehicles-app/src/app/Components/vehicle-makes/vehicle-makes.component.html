@@ -1,0 +1,53 @@
+<div>
+    <div class="input-group" >
+        <span class="input-group-text">Search: </span>
+        <input class="form-control" type="text" placeholder="Search" [(ngModel)]="parameters.Search" (change)="getVehicleMakes()">
+    </div>
+    <div>
+        <label>Order by: </label>      
+            <select class="form-control" [(ngModel)]="parameters.OrderBy" (change)="getVehicleMakes()">    
+                <option value="" selected disabled hidden>Choose here</option>         
+                <option parameters.OrderBy="Name">
+                    Name
+                </option>
+                <option parameters.OrderBy="Abrv">
+                    Abrv
+                </option>
+            </select>     
+    </div>
+    <div>
+        <label>Order by direction </label>
+            <select  class="form-control" [(ngModel)]="parameters.OrderByDirection" (change)="getVehicleMakes()">
+                <option value="" selected disabled hidden>Choose here</option>
+                <option parameters.OrderByDirection="Ascending">
+                        Ascending
+                </option>
+                <option parameters.OrderByDirection="Descending">
+                        Descending
+                </option>
+            </select>
+    </div>
+</div>
+<div *ngIf="vehiclemakes">
+    <h1>List of Vehicle Makes</h1>
+    <a class="btn btn-outline-dark" routerLink="/vehiclemake/create">Create New Vehicle Make</a>
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Abrv</th>
+            </tr>
+        </thead>
+        <tbody> 
+            <tr *ngFor="let make of vehiclemakes.Results">
+                <td>{{make.Id}}</td>
+                <td>{{make.Name}}</td>
+                <td>{{make.Abrv}}</td>
+                <button (click)="onSelect(make)">Details</button>
+            </tr>
+        </tbody>
+    </table>
+    <app-pagging [page]="page" [totalnumberofpages]="vehiclemakes.TotalNumberOfPages" (pageChanged)="onPageChangedHandler($event)"></app-pagging> 
+    <app-vehicle-make-detail *ngIf="!details" [make]="selectedmake" (makeChanged)="getVehicleMakes()"></app-vehicle-make-detail>
+</div>

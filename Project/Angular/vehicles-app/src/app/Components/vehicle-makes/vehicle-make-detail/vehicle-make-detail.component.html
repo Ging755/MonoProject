@@ -1,0 +1,18 @@
+<div *ngIf="make">
+        <h2>{{make.Name | uppercase}} Details</h2>
+        <div><span>Id: </span>{{make.Id}}</div>
+        <div>
+          <p>Current Name: {{make.Name}}</p>
+          <label>New Name:
+            <input type="text" [(ngModel)]="editedmake.Name" placeholder="name"/>
+          </label>
+        </div>
+        <div>
+          <p>Current Abrv: {{make.Abrv}}</p>
+          <label>New Abrv:
+            <input type="text" [(ngModel)]="editedmake.Abrv" placeholder="abrv"/>
+          </label>
+        </div>
+        <button (click)="onEdit()">Edit</button>
+        <button (click)="onDelete()">Delete</button>
+</div>
