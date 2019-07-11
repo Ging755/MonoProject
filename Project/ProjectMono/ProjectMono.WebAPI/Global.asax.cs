@@ -16,7 +16,7 @@ namespace ProjectMono.WebAPI
             AutoMapper.Mapper.Initialize(x =>
             {
                 x.AddProfile<ProjectMono.WebAPI.App_Start.AutoMapperProfile>();
-                x.AddProfile<ProjectMono.Common.AutoMapperProfile>();
+                x.AddProfile<ProjectMono.Repository.AutoMapperProfile>();
             });
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);

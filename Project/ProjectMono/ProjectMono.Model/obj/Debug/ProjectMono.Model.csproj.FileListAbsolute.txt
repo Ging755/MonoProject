@@ -62,19 +62,19 @@ C:\Users\Ging\Desktop\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.
 C:\Users\Ging\Desktop\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.csproj.CopyComplete
 C:\Users\Ging\Desktop\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.dll
 C:\Users\Ging\Desktop\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.pdb
-C:\Users\Praktikant\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.Model.dll
-C:\Users\Praktikant\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.Model.pdb
-C:\Users\Praktikant\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Model\bin\Debug\Ninject.dll
-C:\Users\Praktikant\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.DAL.dll
-C:\Users\Praktikant\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.Model.Common.dll
-C:\Users\Praktikant\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Model\bin\Debug\EntityFramework.dll
-C:\Users\Praktikant\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.DAL.pdb
-C:\Users\Praktikant\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.DAL.dll.config
-C:\Users\Praktikant\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.Model.Common.pdb
-C:\Users\Praktikant\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Model\bin\Debug\Ninject.xml
-C:\Users\Praktikant\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Model\bin\Debug\EntityFramework.xml
-C:\Users\Praktikant\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.csprojAssemblyReference.cache
-C:\Users\Praktikant\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.csproj.CoreCompileInputs.cache
-C:\Users\Praktikant\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.csproj.CopyComplete
-C:\Users\Praktikant\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.dll
-C:\Users\Praktikant\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.pdb
+G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.Model.dll
+G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.Model.pdb
+G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Model\bin\Debug\Ninject.dll
+G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.DAL.dll
+G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.Model.Common.dll
+G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Model\bin\Debug\EntityFramework.dll
+G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.DAL.pdb
+G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.DAL.dll.config
+G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Model\bin\Debug\ProjectMono.Model.Common.pdb
+G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Model\bin\Debug\Ninject.xml
+G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Model\bin\Debug\EntityFramework.xml
+G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.csprojAssemblyReference.cache
+G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.csproj.CoreCompileInputs.cache
+G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.csproj.CopyComplete
+G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.dll
+G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Model\obj\Debug\ProjectMono.Model.pdb

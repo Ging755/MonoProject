@@ -17,7 +17,7 @@ using System.Web.Http.Cors;
 
 namespace ProjectMono.WebAPI.Controllers
 {
-
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
 
     public class VehicleModelController : ApiController
     {
