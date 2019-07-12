@@ -12,6 +12,7 @@ import { VehicleMakeCreateComponent } from './Components/vehicle-makes/vehicle-m
 import { VehicleModelsComponent } from './Components/vehicle-models/vehicle-models.component';
 import { VehicleModelCreateComponent } from './Components/vehicle-models/vehicle-model-create/vehicle-model-create.component';
 import { VehicleModelDetailsComponent } from './Components/vehicle-models/vehicle-model-details/vehicle-model-details.component';
+import { NavigationBarComponent } from './Components/navigation-bar/navigation-bar.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { VehicleModelDetailsComponent } from './Components/vehicle-models/vehicl
     VehicleModelsComponent,
     VehicleModelCreateComponent,
     VehicleModelDetailsComponent,
+    NavigationBarComponent,
   ],
   imports: [
     BrowserModule,

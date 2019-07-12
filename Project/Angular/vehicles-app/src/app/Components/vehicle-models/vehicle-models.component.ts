@@ -17,7 +17,6 @@ export class VehicleModelsComponent implements OnInit {
 
   vehiclemodels : PagedVehicle<VehicleModel>;
   makes : PagedVehicle<VehicleMake>;
-  selectedmodel : VehicleModel;
   parameters : SortingParameters;
   makeId : number;
   page : number;
@@ -33,14 +32,8 @@ export class VehicleModelsComponent implements OnInit {
     this.getVehicleMakes();
   }
 
-  onSelect(model : VehicleModel){
-    this.selectedmodel = model;
-    this.details = false;
-  }
-
   getVehicleModels(){
     this.vehiclemodelService.getVehicleModels(this.page, 5, this.parameters, this.makeId).subscribe(x => this.vehiclemodels = x);
-    this.details = true;
   }
 
   getVehicleMakes(){

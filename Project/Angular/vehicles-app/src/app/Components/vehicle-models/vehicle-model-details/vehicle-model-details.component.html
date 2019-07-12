@@ -1,21 +1,29 @@
-<div *ngIf="model">
+<div *ngIf="model && make">
     <h2>{{model.Name | uppercase}} Details</h2>
-    <div><span>Id: </span>{{model.Id}}</div>
-    <div *ngIf="make"><span>Make :</span> {{make.Name}}</div>
-    <div>
-        <p>Current Name: {{model.Name}}</p>
-        <label>Name:
-            <input  type="text" placeholder="Name" [(ngModel)]="editedmodel.Name"/>
-        </label>
+    <div class="input-group" style="padding-top: 10px">
+        <span class="input-group-text" style="padding-right: 40px">Id: </span>
+        <input [disabled]="true" class="form-control" value="{{model.Id}}"/>
     </div>
-    <div>
-        <p>Current Abrv: {{model.Abrv}}</p>
-        <label>Abrv
-            <input type="text" placeholder="Abrv" [(ngModel)]="editedmodel.Abrv"/>
-        </label>
+    <div class="input-group" style="padding-top: 10px">
+        <span class="input-group-text" style="padding-right: 15px">Make: </span>
+        <input [disabled]="true" class="form-control" value="{{make.Name}}"/>
     </div>
-    <div>
-        <button type="submit" (click)="onEdit()">Edit</button>
-        <button type="button" (click)="onDelete()">Delete</button>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit(editForm.value)">
+    <div class="input-group" style="padding-top: 10px">
+        <span class="input-group-text">Name: </span>
+        <input required type="text" class="form-control" placeholder="Name" formControlName="name"/>
     </div>
+    <div class="input-group" style="padding-top: 10px; padding-bottom: 10px">
+        <span class="input-group-text" style="padding-right: 23px">Abrv: </span>
+        <input required type="text" class="form-control" placeholder="Abrv" formControlName="abrv"/>
+    </div>
+    <div class="input-group">
+        <div>
+            <button class="btn btn-outline-dark" style="padding-right: 20px; padding-left: 20px" [disabled]="editForm.invalid || (editForm.value.name == model.Name && editForm.value.abrv == model.Abrv)"type="submit">Edit</button>
+        </div>
+        <div style="padding-left: 10px">
+            <button class="btn btn-outline-dark" type="button" (click)="onDelete()">Delete</button>
+        </div>
+    </div>  
+    </form>
 </div>

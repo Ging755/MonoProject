@@ -3,6 +3,9 @@ import { VehicleModel } from 'src/app/Models/vehicle-model';
 import { VehicleModelService } from 'src/app/Servies/vehicle-model.service';
 import { VehicleMakeService } from 'src/app/Servies/vehicle-make.service';
 import { VehicleMake } from 'src/app/Models/vehicle-make';
+import { Router, ActivatedRoute } from '@angular/router';
+import { flatten } from '@angular/compiler';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-vehicle-model-details',
@@ -11,34 +14,33 @@ import { VehicleMake } from 'src/app/Models/vehicle-make';
 })
 export class VehicleModelDetailsComponent implements OnInit {
 
-  @Input() model: VehicleModel
-
-  @Output() modelChanged: EventEmitter<null> = new EventEmitter();
-
+  model: VehicleModel;
   make : VehicleMake;
-  editedmodel : VehicleModel={
-    Id : 0,
-    Name : "",
-    Abrv : "",
-    MakeId : 0
-  }
+  editForm : FormGroup;
 
-  constructor(private vehiclemodelService : VehicleModelService, private vehiclemakeService : VehicleMakeService) { 
+  constructor(private fb : FormBuilder, private vehiclemodelService : VehicleModelService, private vehiclemakeService : VehicleMakeService, private router : Router, private route : ActivatedRoute) { 
   }
 
   ngOnInit() {
-    this.vehiclemakeService.getVehicleMakeById(this.model.MakeId).subscribe(x => this.make = x);
+    this.vehiclemodelService.getVehicleModelById(+this.route.snapshot.paramMap.get("id")).subscribe(x => {
+      this.model = x;
+      this.editForm = this.fb.group({
+        name : this.model.Name,
+        abrv : this.model.Abrv
+      })
+      this.vehiclemakeService.getVehicleMakeById(this.model.MakeId).subscribe(x => {
+        this.make = x;
+      });
+    });
   }
 
-  onEdit(){
-    this.editedmodel.Id = this.model.Id;
-    this.editedmodel.MakeId = this.model.MakeId;
-    if(this.editedmodel.Name == "" || this.editedmodel.Abrv == ""){
-    }else{
-    this.vehiclemodelService.editVehicleModel(this.editedmodel).subscribe(x => this.modelChanged.emit());
-    }
+  onSubmit(data){
+    this.model.Name = data.name;
+    this.model.Abrv = data.abrv;
+    this.vehiclemodelService.editVehicleModel(this.model).subscribe(x => this.router.navigate(["vehiclemodels"]));
   }
+
   onDelete(){
-    this.vehiclemodelService.deleteVehicleModel(this.model.Id).subscribe(x => this.modelChanged.emit());
+    this.vehiclemodelService.deleteVehicleModel(this.model.Id).subscribe(x => this.router.navigate(["vehiclemodels"]));
   }
 }

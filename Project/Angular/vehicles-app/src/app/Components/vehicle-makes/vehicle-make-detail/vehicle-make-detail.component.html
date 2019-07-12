@@ -1,18 +1,25 @@
 <div *ngIf="make">
-        <h2>{{make.Name | uppercase}} Details</h2>
-        <div><span>Id: </span>{{make.Id}}</div>
+    <h2>{{make.Name | uppercase}} Details</h2>
+    <div class="input-group" style="padding-top: 10px">
+        <span class="input-group-text" style="padding-right: 40px">Id: </span>
+        <input [disabled]="true" class="form-control" value="{{make.Id}}"/>
+    </div>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit(editForm.value)">
+    <div class="input-group" style="padding-top: 10px">
+        <span class="input-group-text">Name: </span>
+        <input required type="text" class="form-control" placeholder="Name" formControlName="name"/>
+    </div>
+    <div class="input-group" style="padding-top: 10px; padding-bottom: 10px">
+        <span class="input-group-text" style="padding-right: 23px">Abrv: </span>
+        <input required type="text" class="form-control" placeholder="Abrv" formControlName="abrv"/>
+    </div>
+    <div class="input-group">
         <div>
-          <p>Current Name: {{make.Name}}</p>
-          <label>New Name:
-            <input type="text" [(ngModel)]="editedmake.Name" placeholder="name"/>
-          </label>
+            <button class="btn btn-outline-dark" style="padding-right: 20px; padding-left: 20px" [disabled]="editForm.invalid || (editForm.value.name == make.Name && editForm.value.abrv == make.Abrv)"type="submit">Edit</button>
         </div>
-        <div>
-          <p>Current Abrv: {{make.Abrv}}</p>
-          <label>New Abrv:
-            <input type="text" [(ngModel)]="editedmake.Abrv" placeholder="abrv"/>
-          </label>
+        <div style="padding-left: 10px">
+            <button class="btn btn-outline-dark" type="button" (click)="onDelete()">Delete</button>
         </div>
-        <button (click)="onEdit()">Edit</button>
-        <button (click)="onDelete()">Delete</button>
+    </div>  
+    </form>
 </div>

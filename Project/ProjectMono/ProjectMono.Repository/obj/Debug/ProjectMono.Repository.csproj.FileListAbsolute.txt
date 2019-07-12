@@ -190,3 +190,35 @@ G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Repository\obj\D
 G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Repository\obj\Debug\ProjectMono.Repository.csproj.CopyComplete
 G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Repository\obj\Debug\ProjectMono.Repository.dll
 G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Repository\obj\Debug\ProjectMono.Repository.pdb
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\ProjectMono.Repository.dll.config
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\ProjectMono.Repository.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\ProjectMono.Repository.pdb
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\AutoMapper.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\Castle.Core.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\EntityFramework.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\Ninject.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\Ninject.Extensions.Factory.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\ProjectMono.Common.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\ProjectMono.DAL.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\ProjectMono.Model.Common.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\ProjectMono.Model.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\ProjectMono.Repository.Common.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\ProjectMono.Common.pdb
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\ProjectMono.DAL.pdb
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\ProjectMono.DAL.dll.config
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\ProjectMono.Model.Common.pdb
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\ProjectMono.Model.pdb
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\ProjectMono.Repository.Common.pdb
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\ProjectMono.Repository.Common.dll.config
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\AutoMapper.pdb
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\AutoMapper.xml
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\EntityFramework.xml
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\Ninject.xml
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\bin\Debug\Ninject.Extensions.Factory.xml
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\obj\Debug\ProjectMono.Repository.csprojAssemblyReference.cache
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\obj\Debug\ProjectMono.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\obj\Debug\ProjectMono.Repository.csproj.CopyComplete
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\obj\Debug\ProjectMono.Repository.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository\obj\Debug\ProjectMono.Repository.pdb

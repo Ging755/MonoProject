@@ -1,21 +1,21 @@
 <h2>Create New Vehicle Model Here</h2>
-<form [formGroup]="createForm" (ngSubmit)="onSubmit(createForm.value)">
-    <div>
-        <label>Name:
-            <input type="text" formControlName="name" placeholder="name" required/>
-        </label>
+<form [formGroup]="createForm" (ngSubmit)="onSubmit(createForm.value)" *ngIf="makes" >
+    <div class="input-group" style="padding-top: 10px">
+        <span class="input-group-text">Name: </span>
+        <input class="form-control" type="text" formControlName="name" placeholder="name" required/>
     </div>
-    <div>
-        <label>Abrv:
-            <input type="text" formControlName="abrv" placeholder="abrv" required>
-        </label>
+    <div class="input-group" style="padding-top: 10px">
+        <span class="input-group-text" style="padding-right: 22px"> Abrv:   </span>
+        <input class="form-control" type="text" formControlName="abrv" placeholder="abrv" required>
     </div>
-    <div>Make Id:
-        <select *ngIf="makes" formControlName="makeId" required>
+    <div class="input-group" style="padding-bottom: 10px; padding-top: 10px">
+        <span class="input-group-text">Make :</span>
+        <select class="form-control" formControlName="makeId" required>
+            <option value="" selected disabled hidden>Choose here</option>
             <option *ngFor="let make of makes.Results" value="{{make.Id}}">
-                {{make.Name}}
+                    {{make.Name}}
             </option>
         </select>
     </div>
-    <button type="submit" [disabled]="createForm.invalid">Create New</button>
+    <button class="btn btn-outline-dark" type="submit" [disabled]="createForm.invalid">Create New</button>
 </form>

@@ -146,3 +146,21 @@ G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Repository.Commo
 G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Repository.Common\obj\Debug\ProjectMono.Repository.Common.csproj.CopyComplete
 G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Repository.Common\obj\Debug\ProjectMono.Repository.Common.dll
 G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Repository.Common\obj\Debug\ProjectMono.Repository.Common.pdb
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Repository.Common.dll.config
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Repository.Common.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Repository.Common.pdb
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository.Common\bin\Debug\EntityFramework.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository.Common\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Common.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Model.Common.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository.Common\bin\Debug\Ninject.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Common.pdb
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository.Common\bin\Debug\ProjectMono.Model.Common.pdb
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository.Common\bin\Debug\EntityFramework.xml
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository.Common\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository.Common\bin\Debug\Ninject.xml
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository.Common\obj\Debug\ProjectMono.Repository.Common.csprojAssemblyReference.cache
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository.Common\obj\Debug\ProjectMono.Repository.Common.csproj.CoreCompileInputs.cache
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository.Common\obj\Debug\ProjectMono.Repository.Common.csproj.CopyComplete
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository.Common\obj\Debug\ProjectMono.Repository.Common.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Repository.Common\obj\Debug\ProjectMono.Repository.Common.pdb

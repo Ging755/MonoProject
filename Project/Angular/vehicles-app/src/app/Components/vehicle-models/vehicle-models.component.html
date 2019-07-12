@@ -1,35 +1,36 @@
 <div>
-    <div class="input-group">
-        <span class="input-group-text">Search: </span>
+    <div class="input-group" style="padding-top: 10px">
+        <span class="input-group-text" style="padding-right: 30px">Search: </span>
         <input class="form-control" type="text" placeholder="Search" [(ngModel)]="parameters.Search" (change)="getVehicleModels()"> 
     </div>
-    <div>
-        <label>Order by: </label>     
-            <select class="form-control" [(ngModel)]="parameters.OrderBy" (change)="getVehicleModels()">    
-                <option value="" selected disabled hidden>Choose here</option>         
-                <option value="Name">
-                    Name
-                </option>
-                <option value="Abrv">
-                    Abrv
-                </option>
-            </select>      
+    <div class="input-group" style="padding-top: 10px">
+        <span class="input-group-text" style="padding-right: 15px">Order by: </span>     
+        <select class="form-control" [(ngModel)]="parameters.OrderBy" (change)="getVehicleModels()">    
+            <option value="" selected disabled hidden>Choose here</option>         
+            <option value="Name">
+                Name
+            </option>
+            <option value="Abrv">
+                Abrv
+            </option>
+        </select>      
     </div>
-    <div>
-        <label>Order by direction </label>
-            <select class="form-control" [(ngModel)]="parameters.OrderByDirection" (change)="getVehicleModels()">
-                <option value="" selected disabled hidden>Choose here</option>
-                <option value="Ascending">
+    <div class="input-group" style="padding-top: 10px">
+        <span class="input-group-text">Direction: </span>
+        <select class="form-control" [(ngModel)]="parameters.OrderByDirection" (change)="getVehicleModels()">
+            <option value="" selected disabled hidden>Choose here</option>
+            <option value="Ascending">
                         Ascending
-                </option>
-                <option value="Descending">
+            </option>
+            <option value="Descending">
                         Descending
-                </option>
-            </select>
+            </option>
+        </select>
     </div>
-    <div>
-        <label>Order by Make </label>
-        <select class="form-control" *ngIf="makes" [(ngModel)]="makeId" (change)="getVehicleModels()">
+    <div class="input-group" style="padding-top: 10px"> 
+        <span class="input-group-text" style="padding-right: 39px">Make: </span>
+        <select *ngIf="makes" class="form-control" [(ngModel)]="makeId" (change)="getVehicleModels()">
+            <option value="" selected disabled hidden>Choose here</option>
             <option value="">All</option>
             <option *ngFor="let make of makes.Results" value="{{make.Id}}">
                 {{make.Name}}
@@ -39,7 +40,8 @@
 </div>
 <div *ngIf="vehiclemodels">
     <h1>List of Vehicle Models</h1>
-    <a class="btn btn-outline-dark" routerLink="/vehiclemodel/create">Create New Vehicle Model</a>
+    <a class="btn btn-outline-dark" routerLink="/vehiclemodel/create">Create New</a>
+    <div style="padding-top: 5px"></div>
     <table class="table table-dark table-striped">
         <thead>
             <tr>
@@ -53,10 +55,9 @@
                 <td>{{model.Id}}</td>
                 <td>{{model.Name}}</td>
                 <td>{{model.Abrv}}</td>
-                <button (click)="onSelect(model)">Details</button>
+                <td><a class="btn btn-outline-light" routerLink="/vehiclemodel/details/{{model.Id}}">Details</a></td>
             </tr>
         </tbody>
     </table>
     <app-pagging [page]="page" [totalnumberofpages]="vehiclemodels.TotalNumberOfPages" (pageChanged)="onPageChangedHandler($event)"></app-pagging>
-    <app-vehicle-model-details *ngIf="!details" [model]="selectedmodel" (modelChanged)="getVehicleModels()"></app-vehicle-model-details>
 </div>

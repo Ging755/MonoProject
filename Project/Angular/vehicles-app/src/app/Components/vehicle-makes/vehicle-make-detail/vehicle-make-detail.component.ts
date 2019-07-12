@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { VehicleMake } from 'src/app/Models/vehicle-make';
 import { VehicleMakeService } from 'src/app/Servies/vehicle-make.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 
 @Component({
@@ -10,30 +12,29 @@ import { VehicleMakeService } from 'src/app/Servies/vehicle-make.service';
 })
 export class VehicleMakeDetailComponent implements OnInit {
 
-  @Input() make : VehicleMake;
+  make : VehicleMake;
+  editForm : FormGroup;
 
-  @Output() makeChanged: EventEmitter<null> = new EventEmitter();
-
-  editedmake : VehicleMake = {
-    Id : 0,
-    Name : "",
-    Abrv : ""
-  }
-  constructor(private vehiclemakeService : VehicleMakeService) {
+  constructor(private fb : FormBuilder, private vehiclemakeService : VehicleMakeService, private router : Router, private route : ActivatedRoute) {
    }
 
   ngOnInit() {
+    this.vehiclemakeService.getVehicleMakeById(+this.route.snapshot.paramMap.get("id")).subscribe(x => {
+      this.make = x;
+      this.editForm = this.fb.group({
+        name : this.make.Name,
+        abrv : this.make.Abrv       
+      })
+    });
   }
 
-  onEdit(){
-    this.editedmake.Id = this.make.Id
-    if(this.editedmake.Name == "" || this.editedmake.Abrv == ""){
-    }else{
-    this.vehiclemakeService.editVehicleMake(this.editedmake).subscribe(x => this.makeChanged.emit());
-    }
+  onSubmit(data){
+    this.make.Name = data.name;
+    this.make.Abrv = data.abrv;
+    this.vehiclemakeService.editVehicleMake(this.make).subscribe(x => this.router.navigate(["vehiclemakes"]));
   }
 
   onDelete(){
-    this.vehiclemakeService.deleteVehicleMake(this.make.Id).subscribe(x => this.makeChanged.emit());
+    this.vehiclemakeService.deleteVehicleMake(this.make.Id).subscribe(x => this.router.navigate(["vehiclemakes"]));
   }
 }

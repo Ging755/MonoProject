@@ -21,7 +21,11 @@ export class VehicleModelService {
     getVehicleModels(page : number, pagesize : number, parameters : SortingParameters, makeId : number): Observable<PagedVehicle<VehicleModel>>{
       return this.http.get<PagedVehicle<VehicleModel>>(WebAPIUrls.VehicleModelUrl + "/?page=" + page + "&pagesize=" + pagesize + "&search=" + parameters.Search + "&sort=" + parameters.OrderBy + "&direction=" + parameters.OrderByDirection + "&makeid=" + makeId)
     }
-  
+
+    getVehicleModelById(id : number){
+      return this.http.get<VehicleModel>(WebAPIUrls.VehicleModelUrl + "/" + id);
+    }
+
     createVehicleModel(model : VehicleModel) : Observable<any>{
       return this.http.post<VehicleModel>(WebAPIUrls.VehicleModelUrl, model, httpOptions)
     }

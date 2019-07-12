@@ -126,3 +126,16 @@ G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Service.Common\o
 G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Service.Common\obj\Debug\ProjectMono.Service.Common.csproj.CopyComplete
 G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Service.Common\obj\Debug\ProjectMono.Service.Common.dll
 G:\ProjectMono all versions\V20\Project\ProjectMono\ProjectMono.Service.Common\obj\Debug\ProjectMono.Service.Common.pdb
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Service.Common\bin\Debug\ProjectMono.Service.Common.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Service.Common\bin\Debug\ProjectMono.Service.Common.pdb
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Service.Common\bin\Debug\ProjectMono.Common.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Service.Common\bin\Debug\ProjectMono.Model.Common.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Service.Common\bin\Debug\Ninject.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Service.Common\bin\Debug\ProjectMono.Common.pdb
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Service.Common\bin\Debug\ProjectMono.Model.Common.pdb
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Service.Common\bin\Debug\Ninject.xml
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Service.Common\obj\Debug\ProjectMono.Service.Common.csprojAssemblyReference.cache
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Service.Common\obj\Debug\ProjectMono.Service.Common.csproj.CoreCompileInputs.cache
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Service.Common\obj\Debug\ProjectMono.Service.Common.csproj.CopyComplete
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Service.Common\obj\Debug\ProjectMono.Service.Common.dll
+C:\Users\Ging\Desktop\MonoProject\Project\ProjectMono\ProjectMono.Service.Common\obj\Debug\ProjectMono.Service.Common.pdb
